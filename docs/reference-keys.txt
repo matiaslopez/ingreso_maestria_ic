@@ -1,4 +1,2 @@
 introducción
-ejercicios
-estructuras-de-control---gráficos
-ejercicios-1
+estructuras-de-control---gráficos-en-construcción
