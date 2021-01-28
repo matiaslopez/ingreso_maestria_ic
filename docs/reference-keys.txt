@@ -1,2 +1,2 @@
-introducción
-estructuras-de-control---gráficos-en-construcción
+clase01
+clase02
