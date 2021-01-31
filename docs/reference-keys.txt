@@ -1,2 +1,7 @@
 clase01
 clase02
+análisis-exploratorio-a-partir-del-manejo-de-salidas-gráficas
+graficando-en-r
+gráficos-básicos
+gráficos-básicos-probando-modificar-parámetros
+práctica-1-sucesiones-funciones-y-límites
