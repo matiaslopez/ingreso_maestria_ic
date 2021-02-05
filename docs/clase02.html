@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Clase 2 Estructuras de control - Gráficos (en construcción) | Curso de Ingreso - Módulo Programación</title>
-  <meta name="description" content="Clase 2 Estructuras de control - Gráficos (en construcción) | Curso de Ingreso - Módulo Programación" />
+  <title>Clase 2 Estructuras de control - Gráficos | Curso de Ingreso - Módulo Programación</title>
+  <meta name="description" content="Clase 2 Estructuras de control - Gráficos | Curso de Ingreso - Módulo Programación" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Clase 2 Estructuras de control - Gráficos (en construcción) | Curso de Ingreso - Módulo Programación" />
+  <meta property="og:title" content="Clase 2 Estructuras de control - Gráficos | Curso de Ingreso - Módulo Programación" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Clase 2 Estructuras de control - Gráficos (en construcción) | Curso de Ingreso - Módulo Programación" />
+  <meta name="twitter:title" content="Clase 2 Estructuras de control - Gráficos | Curso de Ingreso - Módulo Programación" />
   
   
   
@@ -131,14 +131,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1" data-path="clase01.html"><a href="clase01.html"><i class="fa fa-check"></i><b>1</b> Introducción</a><ul>
 <li class="chapter" data-level="" data-path="clase01.html"><a href="clase01.html#ejercicios"><i class="fa fa-check"></i>Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="clase02.html"><a href="clase02.html"><i class="fa fa-check"></i><b>2</b> Estructuras de control - Gráficos (en construcción)</a><ul>
-<li class="chapter" data-level="2.1" data-path="clase02.html"><a href="clase02.html#análisis-exploratorio-a-partir-del-manejo-de-salidas-gráficas"><i class="fa fa-check"></i><b>2.1</b> Análisis exploratorio a partir del manejo de salidas gráficas</a></li>
-<li class="chapter" data-level="2.2" data-path="clase02.html"><a href="clase02.html#graficando-en-r"><i class="fa fa-check"></i><b>2.2</b> Graficando en R</a></li>
-<li class="chapter" data-level="2.3" data-path="clase02.html"><a href="clase02.html#gráficos-básicos"><i class="fa fa-check"></i><b>2.3</b> Gráficos básicos</a></li>
-<li class="chapter" data-level="" data-path="clase02.html"><a href="clase02.html#ejercicios-1"><i class="fa fa-check"></i>Ejercicios</a><ul>
-<li class="chapter" data-level="2.3.1" data-path="clase02.html"><a href="clase02.html#gráficos-básicos-probando-modificar-parámetros"><i class="fa fa-check"></i><b>2.3.1</b> Gráficos básicos: Probando modificar parámetros</a></li>
-<li class="chapter" data-level="2.3.2" data-path="clase02.html"><a href="clase02.html#práctica-1-sucesiones-funciones-y-límites"><i class="fa fa-check"></i><b>2.3.2</b> Práctica 1: Sucesiones, funciones y límites</a></li>
-</ul></li>
+<li class="chapter" data-level="2" data-path="clase02.html"><a href="clase02.html"><i class="fa fa-check"></i><b>2</b> Estructuras de control - Gráficos</a><ul>
+<li class="chapter" data-level="2.1" data-path="clase02.html"><a href="clase02.html#condicionales"><i class="fa fa-check"></i><b>2.1</b> Condicionales</a></li>
+<li class="chapter" data-level="2.2" data-path="clase02.html"><a href="clase02.html#ciclos"><i class="fa fa-check"></i><b>2.2</b> Ciclos</a></li>
+<li class="chapter" data-level="2.3" data-path="clase02.html"><a href="clase02.html#gráficos"><i class="fa fa-check"></i><b>2.3</b> Gráficos</a></li>
 </ul></li>
 </ul>
 
@@ -158,76 +154,156 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="clase02" class="section level1">
-<h1><span class="header-section-number">Clase 2</span> Estructuras de control - Gráficos (en construcción)</h1>
-<p>Esta es la guía de ejercicios correspondiente a la clase 02. Deberá entregar todos los ejercicios resueltos en un archivo .R.</p>
-<p>Cada ejercicio debe estar resuelto entre comentarios que indique secciones dentro del archivo. Algunos de los temas necesarios para resolver esta guía no fueron incluidos en la teórica, muchos se encuentran en este documento, mientras que otros deberán ser investigados (por ejemplo, buscando en internet). El ejercicio de buscar cómo abordar/resolver problemas en internet es <em>casi tan</em> importante como poder resolverlos.</p>
+<h1><span class="header-section-number">Clase 2</span> Estructuras de control - Gráficos</h1>
+<p>Esta es la guía de ejercicios correspondiente a la clase 02 (ver <a href="clase02.pdf">diapositivas</a>). Deberá entregar al menos todos los ejercicios indicados con una estrella (<span class="math inline">\(\bigstar\)</span>) en un archivo .R. Igualmente se recomienda realizar <em>todos</em> los ejercicios para ganar mayor habilidad en programación. Cada ejercicio debe estar resuelto entre comentarios que indique secciones dentro del archivo.</p>
+<p>Algunos de los temas necesarios para resolver esta guía no fueron incluidos en la teórica, muchos se encuentran en este documento, mientras que otros deberán ser investigados (por ejemplo, buscando en internet). El ejercicio de buscar cómo abordar/resolver problemas en internet es <em>casi tan</em> importante como poder resolverlos.</p>
 <p>Además de escribir los programas pedidos deberán probarlos y dejar constancia de las pruebas realizadas, además de explicitar si anduvo como era esperado o no.</p>
-<div id="análisis-exploratorio-a-partir-del-manejo-de-salidas-gráficas" class="section level2">
-<h2><span class="header-section-number">2.1</span> Análisis exploratorio a partir del manejo de salidas gráficas</h2>
-<p>A continuación, vamos a aprender a realizar, manipular y almacenar salidas gráficas de R usando las funciones existentes en el paquete base. Hay diferentes formas de crear dispositivos donde realizar gráficos, por ejemplo un archivo con extensión pdf, jpg, o bien la pantalla de nuestra computadora. Si queremos que el gráfico aparezca en la pantalla, al ejecutar la función windows() (para el Sistema Operativo Windows), x11() (para Liunx) o quartz() (para Mac), nos devolverá una nueva ventana donde se empezará a generar el gráfico que queramos realizar.</p>
+<div id="condicionales" class="section level2">
+<h2><span class="header-section-number">2.1</span> Condicionales</h2>
+<ol class="example" style="list-style-type: decimal">
+<li><p>Completar el siguiente programa de manera tal que el valor de la variable <code>a_es_mas_grande</code> sea <code>TRUE</code> unicamente cuando la variable <code>a</code> es más grande que <code>b</code> y <code>FALSE</code> en caso contrario.</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" title="1">a_es_mas_grande &lt;-<span class="st"> </span>COMPLETAR</a></code></pre></div></li>
+<li><p><span class="math inline">\(\bigstar\)</span> Completar el siguiente programa de manera tal que el valor de <code>nombre_mas_grande</code> sea el nombre de la variable cuyo valor es más grande entre <code>a</code> y <code>b</code>, en caso de ser iguales devolver cualquiera (puede ser siempre el mismo).</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" title="1"><span class="cf">if</span> (COMPLETAR) {</a>
+<a class="sourceLine" id="cb52-2" title="2">  nombre_mas_grande &lt;-<span class="st"> </span>COMPLETAR</a>
+<a class="sourceLine" id="cb52-3" title="3">} <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb52-4" title="4">  COMPLETAR</a>
+<a class="sourceLine" id="cb52-5" title="5">}</a></code></pre></div></li>
+<li><p>Modificar el programa anterior para que en caso de que sean iguales devuelva <code>"iguales"</code></p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" title="1"><span class="cf">if</span> (COMPLETAR) {</a>
+<a class="sourceLine" id="cb53-2" title="2">  nombre_mas_grande &lt;-<span class="st"> </span>COMPLETAR</a>
+<a class="sourceLine" id="cb53-3" title="3">} <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb53-4" title="4">  <span class="cf">if</span> (COMPLETAR) {</a>
+<a class="sourceLine" id="cb53-5" title="5">    COMPLETAR</a>
+<a class="sourceLine" id="cb53-6" title="6">  } <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb53-7" title="7">    COMPLETAR</a>
+<a class="sourceLine" id="cb53-8" title="8">  }</a>
+<a class="sourceLine" id="cb53-9" title="9">}</a></code></pre></div></li>
+<li><p><span class="math inline">\(\bigstar\)</span> Escribir un programa que dado el valor guardado en la variable <code>q</code>, si dicho valor no es múltiplo de 3, entonces lo múltiplique por 3. En caso de serlo no debe modificarse.</p></li>
+<li><p><span class="math inline">\(\bigstar\)</span> Completar el programa para que calcule un paso de la función de Collatz. Recordar que dice:</p>
+<p><span class="math display">\[
+  collatz(n) = \begin{cases} 
+        n/2 &amp;\mbox{si n es par} \\
+        (3n + 1) &amp; \mbox{si no } \end{cases} 
+\]</span></p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" title="1"><span class="cf">if</span> (COMPLETAR) {</a>
+<a class="sourceLine" id="cb54-2" title="2">  nuevo_n &lt;-<span class="st"> </span>COMPLETAR</a>
+<a class="sourceLine" id="cb54-3" title="3">} <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb54-4" title="4">  COMPLETAR</a>
+<a class="sourceLine" id="cb54-5" title="5">}</a></code></pre></div></li>
+<li><p><span class="math inline">\(\bigstar\)</span> Dados 2 vectores de números <code>v1</code> y <code>v2</code> concatenarlos en una variable llamada <code>res</code> en el siguiente orden:</p>
+<ul>
+<li>si el primer elemento de <code>v1</code> es menor que el primero de <code>v2</code>, entonces <code>v1</code> y luego <code>v2</code></li>
+<li>sino al revés</li>
+</ul></li>
+<li><p><span class="math inline">\(\bigstar\)</span> Dados 2 vectores de números <code>v1</code> y <code>v2</code> y una variable llamada <code>cuenta</code> escribir un programa que calcula en la variable <code>res</code> los siguiente:</p>
+<ul>
+<li>si <code>cuenta</code> vale la cadena de caracteres “promedio”, el promedio de todos los valores de <code>v1</code> y <code>v2</code>,</li>
+<li>si <code>cuenta</code> vale la cadena de caracteres “minimo”, el mínimo entre todos los valores de <code>v1</code> y <code>v2</code>,</li>
+<li>si <code>cuenta</code> vale la cadena de caracteres “minimo1”, el mínimo entre todos los valores de <code>v1</code>,</li>
+<li>para cualquier otro valor devolver la suma de todos los valores.</li>
+</ul></li>
+<li><p>Dados 2 vectores de números <code>v1</code> y <code>v2</code> concatenarlos en una variable llamada <code>res</code> de manera tal que el que primero que aparezca sea aquel cuya suma de elementos sea menor o igual que el otro.</p></li>
+</ol>
 </div>
-<div id="graficando-en-r" class="section level2">
-<h2><span class="header-section-number">2.2</span> Graficando en R</h2>
-<p>En términos generales, la ventana de dibujo en R puede dividirse en tres partes: un área de dibujo, un margen interno y un margen externo. La función <em>par()</em> permite ajustar el tamaño de los márgenes (abajo, izquierda, arriba, derecho), a partir del ajuste de los parámetros <em>mar</em> (margin size) y <em>oma</em> (outer margin area).</p>
-<p>Para generar distintos sub-gráficos en una misma figura pueden usarse los parámetros <em>mfrow</em> o <em>mfcol</em> de la función <em>par()</em>.</p>
+<div id="ciclos" class="section level2">
+<h2><span class="header-section-number">2.2</span> Ciclos</h2>
+<ol start="9" class="example" style="list-style-type: decimal">
+<li><p><span class="math inline">\(\bigstar\)</span> Completar el programa para que dado un vector de 10 posiciones llamado <code>v</code> cuente la cantidad de posiciones <span class="math inline">\(i\)</span> cuyo valor es exactamente <span class="math inline">\(i\)</span>.</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" title="1">res &lt;-<span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb55-2" title="2"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>){</a>
+<a class="sourceLine" id="cb55-3" title="3">  <span class="cf">if</span> (v[i] <span class="op">==</span><span class="st"> </span>COMPLETAR) {</a>
+<a class="sourceLine" id="cb55-4" title="4">    res &lt;-<span class="st"> </span>res <span class="op">+</span><span class="st"> </span>COMPLETAR </a>
+<a class="sourceLine" id="cb55-5" title="5">  }</a>
+<a class="sourceLine" id="cb55-6" title="6">}</a></code></pre></div></li>
+<li><p>Modificar el programa anterior para que acepte vectores de cualquier longitud. Pista: puede usar la función <code>length</code> para obtener la longitud del vector.</p></li>
+<li><p><span class="math inline">\(\bigstar\)</span> Modificar el programa anterior para que además, en caso de que no cumpla con que la posición <span class="math inline">\(i\)</span> valga <span class="math inline">\(i\)</span>, reemplace dicho valor por un cero.</p></li>
+<li><p><span class="math inline">\(\bigstar\)</span> El siguiente programa recorre un vector <code>v</code> hasta encontrar un elemento que cumpla con tener como valor la posición. Dicho valor queda en la variable <code>i</code>. Experimentar con este programa teniendo en cuenta 2 casos: que existe y que no una posición que cumpla.</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" title="1">i &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb56-2" title="2"><span class="cf">while</span> (v[i] <span class="op">!=</span><span class="st"> </span>i){</a>
+<a class="sourceLine" id="cb56-3" title="3">  i &lt;-<span class="st"> </span>i <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb56-4" title="4">}</a></code></pre></div></li>
+<li><p>Arreglar el programa anterior para que en caso de que no exista, el programa termine sin dar error. Pista: antes de la condición diga <code>v[i]</code> debemos asegurarnos que <code>i</code> es una posición válida, es decir, es menor o igual que la longitud del vector.</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" title="1">i &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb57-2" title="2"><span class="cf">while</span> (COMPLETAR <span class="op">&amp;</span><span class="st"> </span>v[i] <span class="op">!=</span><span class="st"> </span>i){</a>
+<a class="sourceLine" id="cb57-3" title="3">  i &lt;-<span class="st"> </span>i <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb57-4" title="4">}</a></code></pre></div></li>
+<li><p>Podemos verificar si existe o no dicho elemento en el ejercicio anterior mirando el valor de <code>i</code>. Si el valor es una posición válida de <code>v</code> entonces sí existe. Completar el programa para que en una variable <code>existe_i</code> determine con <code>TRUE/FALSE</code> la existencia de dicho valor.</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" title="1">i &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb58-2" title="2"><span class="cf">while</span> (COMPLETAR <span class="op">&amp;</span><span class="st"> </span>v[i] <span class="op">!=</span><span class="st"> </span>i){</a>
+<a class="sourceLine" id="cb58-3" title="3">  i &lt;-<span class="st"> </span>i <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb58-4" title="4">}</a>
+<a class="sourceLine" id="cb58-5" title="5"></a>
+<a class="sourceLine" id="cb58-6" title="6">existe &lt;-<span class="st"> </span><span class="ot">FALSE</span></a>
+<a class="sourceLine" id="cb58-7" title="7"><span class="cf">if</span> (COMPLETAR) {</a>
+<a class="sourceLine" id="cb58-8" title="8">  existe &lt;-<span class="st"> </span><span class="ot">TRUE</span></a>
+<a class="sourceLine" id="cb58-9" title="9">}</a></code></pre></div></li>
+<li><p><span class="math inline">\(\bigstar\)</span> Dados dos dados (de 6 caras que valen de 1 a 6), uno azul y uno rojo, calcular con un programa cuantas combinaciones posibles de valores hay. Pista: debería dar 6*6=36. ;-)</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" title="1">contar &lt;-<span class="st"> </span>COMPLETAR</a>
+<a class="sourceLine" id="cb59-2" title="2"><span class="cf">for</span> (dado_azul <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>){</a>
+<a class="sourceLine" id="cb59-3" title="3">  <span class="cf">for</span> (dado_rojo <span class="cf">in</span> COMPLETAR){</a>
+<a class="sourceLine" id="cb59-4" title="4">    contar &lt;-<span class="st"> </span>contar <span class="op">+</span><span class="st"> </span>COMPLETAR</a>
+<a class="sourceLine" id="cb59-5" title="5">  }</a>
+<a class="sourceLine" id="cb59-6" title="6">}</a></code></pre></div></li>
+<li><p><span class="math inline">\(\bigstar\)</span> Con el mismo par de dados, calcular con un programa cuantas combinaciones tienen los 2 dados iguales.</p></li>
+<li><p>Con el mismo par de dados, calcular con un programa cuantas combinaciones suman 10.</p></li>
+<li><p><span class="math inline">\(\bigstar\)</span> Dado un vector de los primeros n naturales, escribir un programa que calcule para cada elemento el cuadrado de dicho valor en un nuevo vector.</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" title="1">valores_n &lt;-<span class="st"> </span>COMPLETAR</a>
+<a class="sourceLine" id="cb60-2" title="2">valores_cuadrado &lt;-<span class="st"> </span><span class="kw">c</span>()</a>
+<a class="sourceLine" id="cb60-3" title="3"></a>
+<a class="sourceLine" id="cb60-4" title="4"><span class="cf">for</span> (i <span class="cf">in</span> COMPLETAR) {</a>
+<a class="sourceLine" id="cb60-5" title="5">  valores_cuadrado &lt;-<span class="st"> </span><span class="kw">c</span>(valores_cuadrado,  COMPLETAR)</a>
+<a class="sourceLine" id="cb60-6" title="6">}</a></code></pre></div></li>
+<li><p>Dado un vector de los primeros n números pares naturales, escribir un programa que calcule para cada elemento el cuadrado de dicho valor, si es múltiplo de 4, sino que lo divida por 2.</p></li>
+</ol>
 </div>
-<div id="gráficos-básicos" class="section level2">
-<h2><span class="header-section-number">2.3</span> Gráficos básicos</h2>
-<p>Vamos a trabajar con la base de datos <em>Iris</em>. Esta es una base de datos muy conocida y utilizada en cursos introductorios. Para más información <a href="https://en.wikipedia.org/wiki/Iris_flower_data_set">mirá acá</a>. Por defecto, la base de datos <em>Iris</em> viene con la instalación de R. Si queres ver como se ve hacé:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">head</span>(iris)</a></code></pre></div>
-<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
-## 1          5.1         3.5          1.4         0.2  setosa
-## 2          4.9         3.0          1.4         0.2  setosa
-## 3          4.7         3.2          1.3         0.2  setosa
-## 4          4.6         3.1          1.5         0.2  setosa
-## 5          5.0         3.6          1.4         0.2  setosa
-## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
-<p>Realizá los siguientes gráficos y analizá qué significan los parámetros <em>main</em>, <em>xlab</em>, <em>ylab</em>, <em>pch</em> y <em>col</em>.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">plot</span>(iris<span class="op">$</span>Sepal.Length, iris<span class="op">$</span>Sepal.Width, <span class="dt">col=</span>iris<span class="op">$</span>Species)</a></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">pairs</span>(iris[,<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>], <span class="dt">pch=</span><span class="kw">as.numeric</span>(iris<span class="op">$</span>Species)) </a></code></pre></div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">hist</span>(iris<span class="op">$</span>Sepal.Length, <span class="dt">ylab=</span><span class="st">&quot;Frecuencia&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Longitud del Sépalo&quot;</span>)</a></code></pre></div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">plot</span>(iris<span class="op">$</span>Sepal.Length<span class="op">~</span>iris<span class="op">$</span>Species, <span class="dt">main=</span><span class="st">&quot;Longitud del sepalo por especie&quot;</span>)</a></code></pre></div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">barplot</span>(<span class="kw">tapply</span>(iris<span class="op">$</span>Sepal.Length,iris<span class="op">$</span>Species,mean), <span class="dt">main=</span><span class="st">&quot;Longitud del sepalo por especie&quot;</span>)</a></code></pre></div>
-</div>
-<div id="ejercicios-1" class="section level2 unlisted unnumbered">
-<h2>Ejercicios</h2>
-<div id="gráficos-básicos-probando-modificar-parámetros" class="section level3">
-<h3><span class="header-section-number">2.3.1</span> Gráficos básicos: Probando modificar parámetros</h3>
-<ol style="list-style-type: decimal">
-<li>Intentá modificar el número de divisiones en el histograma utilizando el parámetro <em>breaks</em>. Una vez hecho esto, probá ingresar:</li>
+<div id="gráficos" class="section level2">
+<h2><span class="header-section-number">2.3</span> Gráficos</h2>
+<ol start="20" class="example" style="list-style-type: decimal">
+<li><p>Dados los valores calculados en el ejecicio anterior, graficarlos con el comando <code>plot</code></p></li>
+<li><p><span class="math inline">\(\bigstar\)</span> Escribir un programa que calcule y grafique los primeros 10 términos de las siguientes sucesiones:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(a_n = \displaystyle\frac{1}{\sqrt{n}}+\left(\frac{1}{2}\right)^n\)</span></p></li>
+<li><p><span class="math inline">\(d_n = (-1)^{n+5}\)</span></p></li>
+</ol></li>
+<li><p><span class="math inline">\(\bigstar\)</span> Retomando el ejercicio de las combinaciones de los dados, escribir un programa que inicie con un vector llamado <code>cantidad</code> de doce posiciones en cero (explorar el comando <code>rep</code>) y que para cada posición calcule cuántas combinaciones de los dados suman el valor indicado por la posición (ej. <code>cantidad[11]</code> vale 2, que son: (5,6) y (6,5)). Graficar los datos obtenidos.</p></li>
+<li><p>Hacé un gráfico que refleje la evolución de la temperatura del agua a lo largo del tiempo atendiendo a la siguiente descripción:</p>
+<p>Saqué del fuego una cacerola con agua hirviendo. Al principio, la temperatura bajó con rapidez, de modo que a los 5 minutos estaba en 60 grados. Luego, fue enfriándose con más lentitud. A los 20 minutos de haberla sacado estaba en 30 grados y 20 minutos después seguía teniendo algo más de 20 grados, temperatura que se mantuvo, pues era la temperatura que había en la cocina.</p></li>
+<li><p><span class="math inline">\(\bigstar\)</span> Graficar la función <span class="math inline">\(\rho(x)=x^2\)</span>, para <span class="math inline">\(x\in [-10,10]\)</span>.</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" title="1">  x &lt;-<span class="st"> </span><span class="kw">seq</span>(COMPLETAR, COMPLETAR, <span class="fl">0.01</span>) </a>
+<a class="sourceLine" id="cb61-2" title="2">  valores &lt;-<span class="st"> </span><span class="kw">c</span>() </a>
+<a class="sourceLine" id="cb61-3" title="3"></a>
+<a class="sourceLine" id="cb61-4" title="4">  <span class="cf">for</span> (i <span class="cf">in</span> x){</a>
+<a class="sourceLine" id="cb61-5" title="5">    nuevo_valor &lt;-<span class="st"> </span>COMPLETAR</a>
+<a class="sourceLine" id="cb61-6" title="6">    valores &lt;-<span class="st"> </span>COMPLETAR</a>
+<a class="sourceLine" id="cb61-7" title="7">  }</a>
+<a class="sourceLine" id="cb61-8" title="8"></a>
+<a class="sourceLine" id="cb61-9" title="9">  <span class="kw">plot</span>(n, valores, <span class="dt">type =</span> <span class="st">&quot;p&quot;</span>)      </a></code></pre></div></li>
+<li><p>Graficar la función <span class="math inline">\(\rho(x)=|x|\)</span>, para <span class="math inline">\(x\in [-10,10]\)</span>.</p></li>
+<li><p><span class="math inline">\(\bigstar\)</span> Considerar <span class="math inline">\(\rho_k: \mathbb R \to \mathbb R\)</span>, definida de la siguiente manera
+<span class="math display">\[\begin{align*}
+    \rho_k(x)=\left\{ \begin{matrix} 
+    x^2&amp;\text{ si } &amp;|x|\le k \\
+    2k|x|-k^2 &amp; \text{ si } &amp;  |x| &gt;k
+    \end{matrix} \right.
+    \end{align*}\]</span></p>
+<p>Calcular y graficar la la función <span class="math inline">\(\rho_k\)</span>, con <span class="math inline">\(k=5\)</span>, para <span class="math inline">\(x\in [-10,10]\)</span>.</p></li>
+<li><p>En el mismo gráfico agregar el valor de la función <span class="math inline">\(\rho_k\)</span> para <span class="math inline">\(k=2\)</span> y <span class="math inline">\(k=8\)</span> utilizando un color diferente para cada valor de <span class="math inline">\(k\)</span></p></li>
 </ol>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">plot</span>(<span class="kw">density</span>(iris<span class="op">$</span>Sepal.Length), <span class="dt">main=</span><span class="st">&quot;Densidad de LongSepalo&quot;</span>)</a></code></pre></div>
-<ol style="list-style-type: decimal">
-<li><p>Hace en una ventana aparte un gráfico subdividido en cuatro donde se muestre el histograma de cada una de las variables medidas.</p></li>
-<li><p>Hace un gráfico adecuado para las 4 variables registradas en las 150 flores. Analizá qué se está representando e investigá la presencia de datos atípicos en los datos.</p></li>
-<li><p>Ahora hace un boxplot para cada variable pero discriminando por especie.</p></li>
-</ol>
-</div>
-<div id="práctica-1-sucesiones-funciones-y-límites" class="section level3">
-<h3><span class="header-section-number">2.3.2</span> Práctica 1: Sucesiones, funciones y límites</h3>
-<p>Ahora vamos a tomar algunos de los ejercicios de la práctica 1 para graficarlos.</p>
-<ol style="list-style-type: decimal">
-<li>Dadas las sucesiones</li>
-</ol>
-<p>Hacé un gráfico con los primeros <span class="math inline">\(10\)</span> términos de las sucesiones <span class="math inline">\(a_n\)</span> y <span class="math inline">\(d_n\)</span>.</p>
-<ol style="list-style-type: decimal">
-<li>Hacé un gráfico que refleje la evolución de la temperatura del agua a lo largo del tiempo atendiendo a la siguiente descripción:</li>
-</ol>
-<p>Saqué del fuego una cacerola con agua hirviendo. Al principio, la temperatura bajó con rapidez, de modo que a los 5 minutos estaba en 60 grados. Luego, fue enfriándose con más lentitud. A los 20 minutos de haberla sacado estaba en 30 grados y 20 minutos después seguía teniendo algo más de 20 grados, temperatura que se mantuvo, pues era la temperatura que había en la cocina.</p>
-<ol style="list-style-type: decimal">
-<li>Para cada uno de los conjuntos de datos dados, graficar el polinomio <em>p(x)</em> interpolador de grado menor o igual que 3.</li>
-</ol>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="co">#conjunto de datos 1</span></a>
-<a class="sourceLine" id="cb9-2" title="2">x1&lt;-<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb9-3" title="3">y1&lt;-<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">11</span>,<span class="dv">27</span>)</a></code></pre></div>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="co">#conjunto de datos 2</span></a>
-<a class="sourceLine" id="cb10-2" title="2">x2&lt;-<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb10-3" title="3">y2&lt;-<span class="kw">c</span>(<span class="op">-</span><span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>)</a></code></pre></div>
-<ol style="list-style-type: decimal">
-<li>Se desea tener un programa que dada la variable <code>grados</code>, que representa la temperatura en grados Farenheit, calcule en otra variable el valor en Celsius. Más info <a href="https://www.lmgtfy.es/?q=formula+formula+fahrenheit+a+celsius" class="uri">https://www.lmgtfy.es/?q=formula+formula+fahrenheit+a+celsius</a>.</li>
-</ol>
+<!-- 1. Para cada uno de los conjuntos de datos dados, graficar el polinomio *p(x)* interpolador de grado menor o igual que 3. -->
+<!--     a. -->
+<!--         ```{r} -->
+<!--         #conjunto de datos 1 -->
+<!--         x1<-c(-1,0,2,3) -->
+<!--         y1<-c(-1,3,11,27) -->
+<!--         ``` -->
+<!--     a. -->
+<!--         ```{r} -->
+<!--         #conjunto de datos 2 -->
+<!--         x2<-c(-1,0,1,2) -->
+<!--         y2<-c(-3,1,1,3) -->
+<!--         ``` -->
 
-</div>
 </div>
 </div>
             </section>
