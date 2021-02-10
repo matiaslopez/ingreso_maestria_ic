@@ -3,3 +3,8 @@ clase02
 condicionales
 ciclos
 gráficos
+clase03
+parte-a-funciones
+parte-b-dataframes
+análisis-exploratorio-a-partir-del-manejo-de-salidas-gráficas
+gráficos-básicos-probando-modificar-parámetros

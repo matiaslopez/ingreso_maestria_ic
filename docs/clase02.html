@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="clase01.html"/>
-
+<link rel="next" href="clase03.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -136,6 +136,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2" data-path="clase02.html"><a href="clase02.html#ciclos"><i class="fa fa-check"></i><b>2.2</b> Ciclos</a></li>
 <li class="chapter" data-level="2.3" data-path="clase02.html"><a href="clase02.html#gráficos"><i class="fa fa-check"></i><b>2.3</b> Gráficos</a></li>
 </ul></li>
+<li class="chapter" data-level="3" data-path="clase03.html"><a href="clase03.html"><i class="fa fa-check"></i><b>3</b> Funciones - DataFrames</a><ul>
+<li class="chapter" data-level="3.1" data-path="clase03.html"><a href="clase03.html#parte-a-funciones"><i class="fa fa-check"></i><b>3.1</b> Parte A: Funciones</a></li>
+<li class="chapter" data-level="3.2" data-path="clase03.html"><a href="clase03.html#parte-b-dataframes"><i class="fa fa-check"></i><b>3.2</b> Parte B: DataFrames</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="clase03.html"><a href="clase03.html#análisis-exploratorio-a-partir-del-manejo-de-salidas-gráficas"><i class="fa fa-check"></i><b>3.2.1</b> Análisis exploratorio a partir del manejo de salidas gráficas</a></li>
+<li class="chapter" data-level="3.2.2" data-path="clase03.html"><a href="clase03.html#gráficos-básicos-probando-modificar-parámetros"><i class="fa fa-check"></i><b>3.2.2</b> Gráficos básicos: Probando modificar parámetros</a></li>
+</ul></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -162,124 +169,372 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">2.1</span> Condicionales</h2>
 <ol class="example" style="list-style-type: decimal">
 <li><p>Completar el siguiente programa de manera tal que el valor de la variable <code>a_es_mas_grande</code> sea <code>TRUE</code> unicamente cuando la variable <code>a</code> es más grande que <code>b</code> y <code>FALSE</code> en caso contrario.</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" title="1">a_es_mas_grande &lt;-<span class="st"> </span>COMPLETAR</a></code></pre></div></li>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" title="1">a_es_mas_grande &lt;-<span class="st"> </span>COMPLETAR</a></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" title="1">a &lt;-<span class="st"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb52-2" title="2">b &lt;-<span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb52-3" title="3">a_es_mas_grande &lt;-<span class="st"> </span>a <span class="op">&gt;</span><span class="st"> </span>b</a>
+<a class="sourceLine" id="cb52-4" title="4">a_es_mas_grande</a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre></li>
 <li><p><span class="math inline">\(\bigstar\)</span> Completar el siguiente programa de manera tal que el valor de <code>nombre_mas_grande</code> sea el nombre de la variable cuyo valor es más grande entre <code>a</code> y <code>b</code>, en caso de ser iguales devolver cualquiera (puede ser siempre el mismo).</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" title="1"><span class="cf">if</span> (COMPLETAR) {</a>
-<a class="sourceLine" id="cb52-2" title="2">  nombre_mas_grande &lt;-<span class="st"> </span>COMPLETAR</a>
-<a class="sourceLine" id="cb52-3" title="3">} <span class="cf">else</span> {</a>
-<a class="sourceLine" id="cb52-4" title="4">  COMPLETAR</a>
-<a class="sourceLine" id="cb52-5" title="5">}</a></code></pre></div></li>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" title="1"><span class="cf">if</span> (COMPLETAR) {</a>
+<a class="sourceLine" id="cb54-2" title="2">  nombre_mas_grande &lt;-<span class="st"> </span>COMPLETAR</a>
+<a class="sourceLine" id="cb54-3" title="3">} <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb54-4" title="4">  COMPLETAR</a>
+<a class="sourceLine" id="cb54-5" title="5">}</a></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" title="1">a &lt;-<span class="st"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb55-2" title="2">b &lt;-<span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb55-3" title="3"><span class="cf">if</span> (a <span class="op">&gt;=</span><span class="st"> </span>b) {</a>
+<a class="sourceLine" id="cb55-4" title="4">  nombre_mas_grande &lt;-<span class="st"> &quot;a&quot;</span></a>
+<a class="sourceLine" id="cb55-5" title="5">} <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb55-6" title="6">  nombre_mas_grande &lt;-<span class="st"> &quot;b&quot;</span></a>
+<a class="sourceLine" id="cb55-7" title="7">}</a>
+<a class="sourceLine" id="cb55-8" title="8">nombre_mas_grande</a></code></pre></div>
+<pre><code>## [1] &quot;a&quot;</code></pre></li>
 <li><p>Modificar el programa anterior para que en caso de que sean iguales devuelva <code>"iguales"</code></p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" title="1"><span class="cf">if</span> (COMPLETAR) {</a>
-<a class="sourceLine" id="cb53-2" title="2">  nombre_mas_grande &lt;-<span class="st"> </span>COMPLETAR</a>
-<a class="sourceLine" id="cb53-3" title="3">} <span class="cf">else</span> {</a>
-<a class="sourceLine" id="cb53-4" title="4">  <span class="cf">if</span> (COMPLETAR) {</a>
-<a class="sourceLine" id="cb53-5" title="5">    COMPLETAR</a>
-<a class="sourceLine" id="cb53-6" title="6">  } <span class="cf">else</span> {</a>
-<a class="sourceLine" id="cb53-7" title="7">    COMPLETAR</a>
-<a class="sourceLine" id="cb53-8" title="8">  }</a>
-<a class="sourceLine" id="cb53-9" title="9">}</a></code></pre></div></li>
-<li><p><span class="math inline">\(\bigstar\)</span> Escribir un programa que dado el valor guardado en la variable <code>q</code>, si dicho valor no es múltiplo de 3, entonces lo múltiplique por 3. En caso de serlo no debe modificarse.</p></li>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" title="1"><span class="cf">if</span> (COMPLETAR) {</a>
+<a class="sourceLine" id="cb57-2" title="2">  nombre_mas_grande &lt;-<span class="st"> </span>COMPLETAR</a>
+<a class="sourceLine" id="cb57-3" title="3">} <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb57-4" title="4">  <span class="cf">if</span> (COMPLETAR) {</a>
+<a class="sourceLine" id="cb57-5" title="5">    COMPLETAR</a>
+<a class="sourceLine" id="cb57-6" title="6">  } <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb57-7" title="7">    COMPLETAR</a>
+<a class="sourceLine" id="cb57-8" title="8">  }</a>
+<a class="sourceLine" id="cb57-9" title="9">}</a></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" title="1">a &lt;-<span class="st"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb58-2" title="2">b &lt;-<span class="st"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb58-3" title="3"><span class="cf">if</span> (a <span class="op">&gt;</span><span class="st"> </span>b) {</a>
+<a class="sourceLine" id="cb58-4" title="4">  nombre_mas_grande &lt;-<span class="st"> &quot;a&quot;</span></a>
+<a class="sourceLine" id="cb58-5" title="5">} <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb58-6" title="6">  <span class="cf">if</span> (a <span class="op">&lt;</span><span class="st"> </span>b) {</a>
+<a class="sourceLine" id="cb58-7" title="7">    nombre_mas_grande &lt;-<span class="st"> &quot;b&quot;</span></a>
+<a class="sourceLine" id="cb58-8" title="8">  } <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb58-9" title="9">    nombre_mas_grande &lt;-<span class="st"> &quot;iguales&quot;</span></a>
+<a class="sourceLine" id="cb58-10" title="10">  }</a>
+<a class="sourceLine" id="cb58-11" title="11">}</a>
+<a class="sourceLine" id="cb58-12" title="12">nombre_mas_grande</a></code></pre></div>
+<pre><code>## [1] &quot;iguales&quot;</code></pre></li>
+<li><p><span class="math inline">\(\bigstar\)</span> Escribir un programa que dado el valor guardado en la variable <code>q</code>, si dicho valor no es múltiplo de 3, entonces lo múltiplique por 3. En caso de serlo no debe modificarse.</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" title="1">q &lt;-<span class="st"> </span><span class="dv">5</span></a>
+<a class="sourceLine" id="cb60-2" title="2"></a>
+<a class="sourceLine" id="cb60-3" title="3"><span class="cf">if</span> (q <span class="op">%%</span><span class="st"> </span><span class="dv">3</span> <span class="op">!=</span><span class="st"> </span><span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb60-4" title="4">  q &lt;-<span class="st"> </span>q <span class="op">*</span><span class="st"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb60-5" title="5">}</a>
+<a class="sourceLine" id="cb60-6" title="6">q</a></code></pre></div>
+<pre><code>## [1] 15</code></pre></li>
 <li><p><span class="math inline">\(\bigstar\)</span> Completar el programa para que calcule un paso de la función de Collatz. Recordar que dice:</p>
 <p><span class="math display">\[
   collatz(n) = \begin{cases} 
         n/2 &amp;\mbox{si n es par} \\
         (3n + 1) &amp; \mbox{si no } \end{cases} 
 \]</span></p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" title="1"><span class="cf">if</span> (COMPLETAR) {</a>
-<a class="sourceLine" id="cb54-2" title="2">  nuevo_n &lt;-<span class="st"> </span>COMPLETAR</a>
-<a class="sourceLine" id="cb54-3" title="3">} <span class="cf">else</span> {</a>
-<a class="sourceLine" id="cb54-4" title="4">  COMPLETAR</a>
-<a class="sourceLine" id="cb54-5" title="5">}</a></code></pre></div></li>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" title="1"><span class="cf">if</span> (COMPLETAR) {</a>
+<a class="sourceLine" id="cb62-2" title="2">  nuevo_n &lt;-<span class="st"> </span>COMPLETAR</a>
+<a class="sourceLine" id="cb62-3" title="3">} <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb62-4" title="4">  COMPLETAR</a>
+<a class="sourceLine" id="cb62-5" title="5">}</a></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" title="1">n &lt;-<span class="st"> </span><span class="dv">15</span></a>
+<a class="sourceLine" id="cb63-2" title="2"><span class="cf">if</span> (n <span class="op">%%</span><span class="st"> </span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb63-3" title="3">  nuevo_n &lt;-<span class="st"> </span>n <span class="op">/</span><span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb63-4" title="4">} <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb63-5" title="5">  nuevo_n &lt;-<span class="st"> </span><span class="dv">3</span> <span class="op">*</span><span class="st"> </span>n <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb63-6" title="6">}</a>
+<a class="sourceLine" id="cb63-7" title="7">nuevo_n</a></code></pre></div>
+<pre><code>## [1] 46</code></pre></li>
 <li><p><span class="math inline">\(\bigstar\)</span> Dados 2 vectores de números <code>v1</code> y <code>v2</code> concatenarlos en una variable llamada <code>res</code> en el siguiente orden:</p>
 <ul>
 <li>si el primer elemento de <code>v1</code> es menor que el primero de <code>v2</code>, entonces <code>v1</code> y luego <code>v2</code></li>
 <li>sino al revés</li>
-</ul></li>
+</ul>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" title="1">v1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">14</span>,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb65-2" title="2">v2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">30</span>, <span class="dv">-25</span>)</a>
+<a class="sourceLine" id="cb65-3" title="3"></a>
+<a class="sourceLine" id="cb65-4" title="4"><span class="cf">if</span> (v1[<span class="dv">1</span>] <span class="op">&lt;</span><span class="st"> </span>v2[<span class="dv">1</span>]) {</a>
+<a class="sourceLine" id="cb65-5" title="5">  res &lt;-<span class="st"> </span><span class="kw">c</span>(v1, v2)</a>
+<a class="sourceLine" id="cb65-6" title="6">} <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb65-7" title="7">  res &lt;-<span class="st"> </span><span class="kw">c</span>(v2, v1)</a>
+<a class="sourceLine" id="cb65-8" title="8">}</a>
+<a class="sourceLine" id="cb65-9" title="9">res</a></code></pre></div>
+<pre><code>## [1]  15  14   2  30 -25</code></pre></li>
 <li><p><span class="math inline">\(\bigstar\)</span> Dados 2 vectores de números <code>v1</code> y <code>v2</code> y una variable llamada <code>cuenta</code> escribir un programa que calcula en la variable <code>res</code> los siguiente:</p>
 <ul>
 <li>si <code>cuenta</code> vale la cadena de caracteres “promedio”, el promedio de todos los valores de <code>v1</code> y <code>v2</code>,</li>
 <li>si <code>cuenta</code> vale la cadena de caracteres “minimo”, el mínimo entre todos los valores de <code>v1</code> y <code>v2</code>,</li>
 <li>si <code>cuenta</code> vale la cadena de caracteres “minimo1”, el mínimo entre todos los valores de <code>v1</code>,</li>
 <li>para cualquier otro valor devolver la suma de todos los valores.</li>
-</ul></li>
-<li><p>Dados 2 vectores de números <code>v1</code> y <code>v2</code> concatenarlos en una variable llamada <code>res</code> de manera tal que el que primero que aparezca sea aquel cuya suma de elementos sea menor o igual que el otro.</p></li>
+</ul>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" title="1">v1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">14</span>,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb67-2" title="2">v2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">30</span>, <span class="dv">-25</span>)</a>
+<a class="sourceLine" id="cb67-3" title="3">cuenta &lt;-<span class="st"> &quot;minimo&quot;</span></a>
+<a class="sourceLine" id="cb67-4" title="4"></a>
+<a class="sourceLine" id="cb67-5" title="5"><span class="cf">if</span> (cuenta <span class="op">==</span><span class="st"> &quot;promedio&quot;</span>) {</a>
+<a class="sourceLine" id="cb67-6" title="6">  res &lt;-<span class="st"> </span><span class="kw">mean</span>(<span class="kw">c</span>(v1, v2))</a>
+<a class="sourceLine" id="cb67-7" title="7">} <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb67-8" title="8">  <span class="cf">if</span> (cuenta <span class="op">==</span><span class="st"> &quot;minimo&quot;</span>) {</a>
+<a class="sourceLine" id="cb67-9" title="9">    res &lt;-<span class="st"> </span><span class="kw">min</span>(<span class="kw">c</span>(v1, v2))</a>
+<a class="sourceLine" id="cb67-10" title="10">  } <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb67-11" title="11">    <span class="cf">if</span> (cuenta <span class="op">==</span><span class="st"> &quot;minimo1&quot;</span>) {</a>
+<a class="sourceLine" id="cb67-12" title="12">      res &lt;-<span class="st"> </span><span class="kw">min</span>(v1)</a>
+<a class="sourceLine" id="cb67-13" title="13">    } <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb67-14" title="14">      res &lt;-<span class="st"> </span><span class="kw">sum</span>(<span class="kw">c</span>(v1,v2))</a>
+<a class="sourceLine" id="cb67-15" title="15">    }</a>
+<a class="sourceLine" id="cb67-16" title="16">  }</a>
+<a class="sourceLine" id="cb67-17" title="17">}</a>
+<a class="sourceLine" id="cb67-18" title="18">res</a></code></pre></div>
+<pre><code>## [1] -25</code></pre></li>
+<li><p>Dados 2 vectores de números <code>v1</code> y <code>v2</code> concatenarlos en una variable llamada <code>res</code> de manera tal que el que primero que aparezca sea aquel cuya suma de elementos sea menor o igual que el otro.</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" title="1">v1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">14</span>,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb69-2" title="2">v2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">30</span>, <span class="dv">-25</span>)</a>
+<a class="sourceLine" id="cb69-3" title="3"></a>
+<a class="sourceLine" id="cb69-4" title="4"><span class="cf">if</span> (<span class="kw">sum</span>(v1) <span class="op">&lt;=</span><span class="st"> </span><span class="kw">sum</span>(v2)) {</a>
+<a class="sourceLine" id="cb69-5" title="5">  res &lt;-<span class="st"> </span><span class="kw">c</span>(v1, v2)</a>
+<a class="sourceLine" id="cb69-6" title="6">} <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb69-7" title="7">  res &lt;-<span class="st"> </span><span class="kw">c</span>(v2, v1)</a>
+<a class="sourceLine" id="cb69-8" title="8">}</a>
+<a class="sourceLine" id="cb69-9" title="9">res</a></code></pre></div>
+<pre><code>## [1]  30 -25  15  14   2</code></pre></li>
 </ol>
 </div>
 <div id="ciclos" class="section level2">
 <h2><span class="header-section-number">2.2</span> Ciclos</h2>
 <ol start="9" class="example" style="list-style-type: decimal">
 <li><p><span class="math inline">\(\bigstar\)</span> Completar el programa para que dado un vector de 10 posiciones llamado <code>v</code> cuente la cantidad de posiciones <span class="math inline">\(i\)</span> cuyo valor es exactamente <span class="math inline">\(i\)</span>.</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" title="1">res &lt;-<span class="st"> </span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb55-2" title="2"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>){</a>
-<a class="sourceLine" id="cb55-3" title="3">  <span class="cf">if</span> (v[i] <span class="op">==</span><span class="st"> </span>COMPLETAR) {</a>
-<a class="sourceLine" id="cb55-4" title="4">    res &lt;-<span class="st"> </span>res <span class="op">+</span><span class="st"> </span>COMPLETAR </a>
-<a class="sourceLine" id="cb55-5" title="5">  }</a>
-<a class="sourceLine" id="cb55-6" title="6">}</a></code></pre></div></li>
-<li><p>Modificar el programa anterior para que acepte vectores de cualquier longitud. Pista: puede usar la función <code>length</code> para obtener la longitud del vector.</p></li>
-<li><p><span class="math inline">\(\bigstar\)</span> Modificar el programa anterior para que además, en caso de que no cumpla con que la posición <span class="math inline">\(i\)</span> valga <span class="math inline">\(i\)</span>, reemplace dicho valor por un cero.</p></li>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" title="1">res &lt;-<span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb71-2" title="2"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>){</a>
+<a class="sourceLine" id="cb71-3" title="3">  <span class="cf">if</span> (v[i] <span class="op">==</span><span class="st"> </span>COMPLETAR) {</a>
+<a class="sourceLine" id="cb71-4" title="4">    res &lt;-<span class="st"> </span>res <span class="op">+</span><span class="st"> </span>COMPLETAR </a>
+<a class="sourceLine" id="cb71-5" title="5">  }</a>
+<a class="sourceLine" id="cb71-6" title="6">}</a></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" title="1">v &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb72-2" title="2">res &lt;-<span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb72-3" title="3"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>){</a>
+<a class="sourceLine" id="cb72-4" title="4">  <span class="cf">if</span> (v[i] <span class="op">==</span><span class="st"> </span>i) {</a>
+<a class="sourceLine" id="cb72-5" title="5">    res &lt;-<span class="st"> </span>res <span class="op">+</span><span class="st"> </span><span class="dv">1</span> </a>
+<a class="sourceLine" id="cb72-6" title="6">  }</a>
+<a class="sourceLine" id="cb72-7" title="7">}</a>
+<a class="sourceLine" id="cb72-8" title="8">res</a></code></pre></div>
+<pre><code>## [1] 5</code></pre></li>
+<li><p>Modificar el programa anterior para que acepte vectores de cualquier longitud. Pista: puede usar la función <code>length</code> para obtener la longitud del vector.</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" title="1">v &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb74-2" title="2">res &lt;-<span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb74-3" title="3"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(v)){</a>
+<a class="sourceLine" id="cb74-4" title="4">  <span class="cf">if</span> (v[i] <span class="op">==</span><span class="st"> </span>i) {</a>
+<a class="sourceLine" id="cb74-5" title="5">    res &lt;-<span class="st"> </span>res <span class="op">+</span><span class="st"> </span><span class="dv">1</span> </a>
+<a class="sourceLine" id="cb74-6" title="6">  }</a>
+<a class="sourceLine" id="cb74-7" title="7">}</a>
+<a class="sourceLine" id="cb74-8" title="8">res</a></code></pre></div>
+<pre><code>## [1] 5</code></pre></li>
+<li><p><span class="math inline">\(\bigstar\)</span> Modificar el programa anterior para que además, en caso de que no cumpla con que la posición <span class="math inline">\(i\)</span> valga <span class="math inline">\(i\)</span>, reemplace dicho valor por un cero.</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb76-1" title="1">v &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb76-2" title="2">res &lt;-<span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb76-3" title="3"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(v)){</a>
+<a class="sourceLine" id="cb76-4" title="4">  <span class="cf">if</span> (v[i] <span class="op">==</span><span class="st"> </span>i) {</a>
+<a class="sourceLine" id="cb76-5" title="5">    res &lt;-<span class="st"> </span>res <span class="op">+</span><span class="st"> </span><span class="dv">1</span> </a>
+<a class="sourceLine" id="cb76-6" title="6">  } <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb76-7" title="7">    v[i] &lt;-<span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb76-8" title="8">  }</a>
+<a class="sourceLine" id="cb76-9" title="9">}</a>
+<a class="sourceLine" id="cb76-10" title="10">res</a></code></pre></div>
+<pre><code>## [1] 5</code></pre></li>
 <li><p><span class="math inline">\(\bigstar\)</span> El siguiente programa recorre un vector <code>v</code> hasta encontrar un elemento que cumpla con tener como valor la posición. Dicho valor queda en la variable <code>i</code>. Experimentar con este programa teniendo en cuenta 2 casos: que existe y que no una posición que cumpla.</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" title="1">i &lt;-<span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb56-2" title="2"><span class="cf">while</span> (v[i] <span class="op">!=</span><span class="st"> </span>i){</a>
-<a class="sourceLine" id="cb56-3" title="3">  i &lt;-<span class="st"> </span>i <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb56-4" title="4">}</a></code></pre></div></li>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb78-1" title="1">i &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb78-2" title="2"><span class="cf">while</span> (v[i] <span class="op">!=</span><span class="st"> </span>i){</a>
+<a class="sourceLine" id="cb78-3" title="3">  i &lt;-<span class="st"> </span>i <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb78-4" title="4">}</a></code></pre></div></li>
 <li><p>Arreglar el programa anterior para que en caso de que no exista, el programa termine sin dar error. Pista: antes de la condición diga <code>v[i]</code> debemos asegurarnos que <code>i</code> es una posición válida, es decir, es menor o igual que la longitud del vector.</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" title="1">i &lt;-<span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb57-2" title="2"><span class="cf">while</span> (COMPLETAR <span class="op">&amp;</span><span class="st"> </span>v[i] <span class="op">!=</span><span class="st"> </span>i){</a>
-<a class="sourceLine" id="cb57-3" title="3">  i &lt;-<span class="st"> </span>i <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb57-4" title="4">}</a></code></pre></div></li>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb79-1" title="1">i &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb79-2" title="2"><span class="cf">while</span> (COMPLETAR <span class="op">&amp;</span><span class="st"> </span>v[i] <span class="op">!=</span><span class="st"> </span>i){</a>
+<a class="sourceLine" id="cb79-3" title="3">  i &lt;-<span class="st"> </span>i <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb79-4" title="4">}</a></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb80-1" title="1">v &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">4</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>,<span class="dv">11</span>)</a>
+<a class="sourceLine" id="cb80-2" title="2">i &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb80-3" title="3"><span class="cf">while</span> (i <span class="op">&lt;=</span><span class="st"> </span><span class="kw">length</span>(v) <span class="op">&amp;</span><span class="st"> </span>v[i] <span class="op">!=</span><span class="st"> </span>i){</a>
+<a class="sourceLine" id="cb80-4" title="4">  i &lt;-<span class="st"> </span>i <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb80-5" title="5">}</a>
+<a class="sourceLine" id="cb80-6" title="6">i</a></code></pre></div>
+<pre><code>## [1] 11</code></pre></li>
 <li><p>Podemos verificar si existe o no dicho elemento en el ejercicio anterior mirando el valor de <code>i</code>. Si el valor es una posición válida de <code>v</code> entonces sí existe. Completar el programa para que en una variable <code>existe_i</code> determine con <code>TRUE/FALSE</code> la existencia de dicho valor.</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" title="1">i &lt;-<span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb58-2" title="2"><span class="cf">while</span> (COMPLETAR <span class="op">&amp;</span><span class="st"> </span>v[i] <span class="op">!=</span><span class="st"> </span>i){</a>
-<a class="sourceLine" id="cb58-3" title="3">  i &lt;-<span class="st"> </span>i <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb58-4" title="4">}</a>
-<a class="sourceLine" id="cb58-5" title="5"></a>
-<a class="sourceLine" id="cb58-6" title="6">existe &lt;-<span class="st"> </span><span class="ot">FALSE</span></a>
-<a class="sourceLine" id="cb58-7" title="7"><span class="cf">if</span> (COMPLETAR) {</a>
-<a class="sourceLine" id="cb58-8" title="8">  existe &lt;-<span class="st"> </span><span class="ot">TRUE</span></a>
-<a class="sourceLine" id="cb58-9" title="9">}</a></code></pre></div></li>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" title="1">i &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb82-2" title="2"><span class="cf">while</span> (COMPLETAR <span class="op">&amp;</span><span class="st"> </span>v[i] <span class="op">!=</span><span class="st"> </span>i){</a>
+<a class="sourceLine" id="cb82-3" title="3">  i &lt;-<span class="st"> </span>i <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb82-4" title="4">}</a>
+<a class="sourceLine" id="cb82-5" title="5"></a>
+<a class="sourceLine" id="cb82-6" title="6">existe &lt;-<span class="st"> </span><span class="ot">FALSE</span></a>
+<a class="sourceLine" id="cb82-7" title="7"><span class="cf">if</span> (COMPLETAR) {</a>
+<a class="sourceLine" id="cb82-8" title="8">  existe &lt;-<span class="st"> </span><span class="ot">TRUE</span></a>
+<a class="sourceLine" id="cb82-9" title="9">}</a></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" title="1">v &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">4</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>,<span class="dv">11</span>)</a>
+<a class="sourceLine" id="cb83-2" title="2">i &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb83-3" title="3"><span class="cf">while</span> (i <span class="op">&lt;=</span><span class="st"> </span><span class="kw">length</span>(v) <span class="op">&amp;</span><span class="st"> </span>v[i] <span class="op">!=</span><span class="st"> </span>i){</a>
+<a class="sourceLine" id="cb83-4" title="4">  i &lt;-<span class="st"> </span>i <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb83-5" title="5">}</a>
+<a class="sourceLine" id="cb83-6" title="6">existe &lt;-<span class="st"> </span>i <span class="op">&lt;=</span><span class="st"> </span><span class="kw">length</span>(v)</a>
+<a class="sourceLine" id="cb83-7" title="7">existe</a></code></pre></div>
+<pre><code>## [1] FALSE</code></pre></li>
 <li><p><span class="math inline">\(\bigstar\)</span> Dados dos dados (de 6 caras que valen de 1 a 6), uno azul y uno rojo, calcular con un programa cuantas combinaciones posibles de valores hay. Pista: debería dar 6*6=36. ;-)</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" title="1">contar &lt;-<span class="st"> </span>COMPLETAR</a>
-<a class="sourceLine" id="cb59-2" title="2"><span class="cf">for</span> (dado_azul <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>){</a>
-<a class="sourceLine" id="cb59-3" title="3">  <span class="cf">for</span> (dado_rojo <span class="cf">in</span> COMPLETAR){</a>
-<a class="sourceLine" id="cb59-4" title="4">    contar &lt;-<span class="st"> </span>contar <span class="op">+</span><span class="st"> </span>COMPLETAR</a>
-<a class="sourceLine" id="cb59-5" title="5">  }</a>
-<a class="sourceLine" id="cb59-6" title="6">}</a></code></pre></div></li>
-<li><p><span class="math inline">\(\bigstar\)</span> Con el mismo par de dados, calcular con un programa cuantas combinaciones tienen los 2 dados iguales.</p></li>
-<li><p>Con el mismo par de dados, calcular con un programa cuantas combinaciones suman 10.</p></li>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" title="1">contar &lt;-<span class="st"> </span>COMPLETAR</a>
+<a class="sourceLine" id="cb85-2" title="2"><span class="cf">for</span> (dado_azul <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>){</a>
+<a class="sourceLine" id="cb85-3" title="3">  <span class="cf">for</span> (dado_rojo <span class="cf">in</span> COMPLETAR){</a>
+<a class="sourceLine" id="cb85-4" title="4">    contar &lt;-<span class="st"> </span>contar <span class="op">+</span><span class="st"> </span>COMPLETAR</a>
+<a class="sourceLine" id="cb85-5" title="5">  }</a>
+<a class="sourceLine" id="cb85-6" title="6">}</a></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" title="1">contar &lt;-<span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb86-2" title="2"><span class="cf">for</span> (dado_azul <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>){</a>
+<a class="sourceLine" id="cb86-3" title="3">  <span class="cf">for</span> (dado_rojo <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>){</a>
+<a class="sourceLine" id="cb86-4" title="4">    contar &lt;-<span class="st"> </span>contar <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb86-5" title="5">  }</a>
+<a class="sourceLine" id="cb86-6" title="6">}</a>
+<a class="sourceLine" id="cb86-7" title="7">contar</a></code></pre></div>
+<pre><code>## [1] 36</code></pre></li>
+<li><p><span class="math inline">\(\bigstar\)</span> Con el mismo par de dados, calcular con un programa cuantas combinaciones tienen los 2 dados iguales.</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb88-1" title="1">contar &lt;-<span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb88-2" title="2"><span class="cf">for</span> (dado_azul <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>){</a>
+<a class="sourceLine" id="cb88-3" title="3">  <span class="cf">for</span> (dado_rojo <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>){</a>
+<a class="sourceLine" id="cb88-4" title="4">    <span class="cf">if</span> (dado_azul<span class="op">==</span>dado_rojo) {</a>
+<a class="sourceLine" id="cb88-5" title="5">      contar &lt;-<span class="st"> </span>contar <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb88-6" title="6">    }</a>
+<a class="sourceLine" id="cb88-7" title="7">  }</a>
+<a class="sourceLine" id="cb88-8" title="8">}</a>
+<a class="sourceLine" id="cb88-9" title="9">contar</a></code></pre></div>
+<pre><code>## [1] 6</code></pre></li>
+<li><p>Con el mismo par de dados, calcular con un programa cuantas combinaciones suman 10.</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb90-1" title="1">contar &lt;-<span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb90-2" title="2"><span class="cf">for</span> (dado_azul <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>){</a>
+<a class="sourceLine" id="cb90-3" title="3">  <span class="cf">for</span> (dado_rojo <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>){</a>
+<a class="sourceLine" id="cb90-4" title="4">    <span class="cf">if</span> (dado_azul <span class="op">+</span><span class="st"> </span>dado_rojo <span class="op">==</span><span class="st"> </span><span class="dv">10</span>) {</a>
+<a class="sourceLine" id="cb90-5" title="5">      contar &lt;-<span class="st"> </span>contar <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb90-6" title="6">    }</a>
+<a class="sourceLine" id="cb90-7" title="7">  }</a>
+<a class="sourceLine" id="cb90-8" title="8">}</a>
+<a class="sourceLine" id="cb90-9" title="9">contar</a></code></pre></div>
+<pre><code>## [1] 3</code></pre></li>
 <li><p><span class="math inline">\(\bigstar\)</span> Dado un vector de los primeros n naturales, escribir un programa que calcule para cada elemento el cuadrado de dicho valor en un nuevo vector.</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" title="1">valores_n &lt;-<span class="st"> </span>COMPLETAR</a>
-<a class="sourceLine" id="cb60-2" title="2">valores_cuadrado &lt;-<span class="st"> </span><span class="kw">c</span>()</a>
-<a class="sourceLine" id="cb60-3" title="3"></a>
-<a class="sourceLine" id="cb60-4" title="4"><span class="cf">for</span> (i <span class="cf">in</span> COMPLETAR) {</a>
-<a class="sourceLine" id="cb60-5" title="5">  valores_cuadrado &lt;-<span class="st"> </span><span class="kw">c</span>(valores_cuadrado,  COMPLETAR)</a>
-<a class="sourceLine" id="cb60-6" title="6">}</a></code></pre></div></li>
-<li><p>Dado un vector de los primeros n números pares naturales, escribir un programa que calcule para cada elemento el cuadrado de dicho valor, si es múltiplo de 4, sino que lo divida por 2.</p></li>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb92-1" title="1">valores_n &lt;-<span class="st"> </span>COMPLETAR</a>
+<a class="sourceLine" id="cb92-2" title="2">valores_cuadrado &lt;-<span class="st"> </span><span class="kw">c</span>()</a>
+<a class="sourceLine" id="cb92-3" title="3"></a>
+<a class="sourceLine" id="cb92-4" title="4"><span class="cf">for</span> (i <span class="cf">in</span> COMPLETAR) {</a>
+<a class="sourceLine" id="cb92-5" title="5">  valores_cuadrado &lt;-<span class="st"> </span><span class="kw">c</span>(valores_cuadrado,  COMPLETAR)</a>
+<a class="sourceLine" id="cb92-6" title="6">}</a></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb93-1" title="1">n &lt;-<span class="st"> </span><span class="dv">15</span></a>
+<a class="sourceLine" id="cb93-2" title="2">valores_n &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span>n</a>
+<a class="sourceLine" id="cb93-3" title="3">valores_cuadrado &lt;-<span class="st"> </span><span class="kw">c</span>()</a>
+<a class="sourceLine" id="cb93-4" title="4"></a>
+<a class="sourceLine" id="cb93-5" title="5"><span class="cf">for</span> (i <span class="cf">in</span> valores_n) {</a>
+<a class="sourceLine" id="cb93-6" title="6">  valores_cuadrado &lt;-<span class="st"> </span><span class="kw">c</span>(valores_cuadrado,  i<span class="op">**</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb93-7" title="7">}</a>
+<a class="sourceLine" id="cb93-8" title="8">valores_cuadrado</a></code></pre></div>
+<pre><code>##  [1]   1   4   9  16  25  36  49  64  81 100 121 144 169 196 225</code></pre></li>
+<li><p>Dado un vector de los primeros n números pares naturales, escribir un programa que calcule para cada elemento el cuadrado de dicho valor, si es múltiplo de 4, sino que lo divida por 2.</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb95-1" title="1">n &lt;-<span class="st"> </span><span class="dv">10</span><span class="op">*</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb95-2" title="2">valores_n &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">2</span>, n, <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb95-3" title="3">valores_nuevos &lt;-<span class="st"> </span><span class="kw">c</span>()</a>
+<a class="sourceLine" id="cb95-4" title="4"></a>
+<a class="sourceLine" id="cb95-5" title="5"><span class="cf">for</span> (i <span class="cf">in</span> valores_n) {</a>
+<a class="sourceLine" id="cb95-6" title="6">  <span class="cf">if</span> (i <span class="op">%%</span><span class="st"> </span><span class="dv">4</span> <span class="op">==</span><span class="st"> </span><span class="dv">0</span> ){</a>
+<a class="sourceLine" id="cb95-7" title="7">    valores_nuevos &lt;-<span class="st"> </span><span class="kw">c</span>(valores_nuevos,  i<span class="op">**</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb95-8" title="8">  } <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb95-9" title="9">    valores_nuevos &lt;-<span class="st"> </span><span class="kw">c</span>(valores_nuevos,  i<span class="op">/</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb95-10" title="10">  }</a>
+<a class="sourceLine" id="cb95-11" title="11">}</a>
+<a class="sourceLine" id="cb95-12" title="12">valores_nuevos</a></code></pre></div>
+<pre><code>##  [1]   1  16   3  64   5 144   7 256   9 400</code></pre></li>
 </ol>
 </div>
 <div id="gráficos" class="section level2">
 <h2><span class="header-section-number">2.3</span> Gráficos</h2>
 <ol start="20" class="example" style="list-style-type: decimal">
-<li><p>Dados los valores calculados en el ejecicio anterior, graficarlos con el comando <code>plot</code></p></li>
+<li><p>Dados los valores calculados en el ejecicio anterior, graficarlos con el comando <code>plot</code></p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb97-1" title="1">n &lt;-<span class="st"> </span><span class="dv">10</span><span class="op">*</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb97-2" title="2">valores_n &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">2</span>, n, <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb97-3" title="3">valores_nuevos &lt;-<span class="st"> </span><span class="kw">c</span>()</a>
+<a class="sourceLine" id="cb97-4" title="4"></a>
+<a class="sourceLine" id="cb97-5" title="5"><span class="cf">for</span> (i <span class="cf">in</span> valores_n) {</a>
+<a class="sourceLine" id="cb97-6" title="6">  <span class="cf">if</span> (i <span class="op">%%</span><span class="st"> </span><span class="dv">4</span> <span class="op">==</span><span class="st"> </span><span class="dv">0</span> ){</a>
+<a class="sourceLine" id="cb97-7" title="7">    valores_nuevos &lt;-<span class="st"> </span><span class="kw">c</span>(valores_nuevos,  i<span class="op">**</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb97-8" title="8">  } <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb97-9" title="9">    valores_nuevos &lt;-<span class="st"> </span><span class="kw">c</span>(valores_nuevos,  i<span class="op">/</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb97-10" title="10">  }</a>
+<a class="sourceLine" id="cb97-11" title="11">}</a>
+<a class="sourceLine" id="cb97-12" title="12">valores_nuevos</a></code></pre></div>
+<pre><code>##  [1]   1  16   3  64   5 144   7 256   9 400</code></pre>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" title="1"><span class="kw">plot</span>(valores_n, valores_nuevos)</a></code></pre></div>
+<p><img src="ModuloProgramacion-IC_files/figure-html/unnamed-chunk-62-1.png" width="672" /></p></li>
 <li><p><span class="math inline">\(\bigstar\)</span> Escribir un programa que calcule y grafique los primeros 10 términos de las siguientes sucesiones:</p>
 <ol style="list-style-type: lower-alpha">
-<li><p><span class="math inline">\(a_n = \displaystyle\frac{1}{\sqrt{n}}+\left(\frac{1}{2}\right)^n\)</span></p></li>
-<li><p><span class="math inline">\(d_n = (-1)^{n+5}\)</span></p></li>
+<li><p><span class="math inline">\(a_n = \displaystyle\frac{1}{\sqrt{n}}+\left(\frac{1}{2}\right)^n\)</span></p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb100-1" title="1">valores_n &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb100-2" title="2">a_n &lt;-<span class="st"> </span><span class="kw">c</span>()</a>
+<a class="sourceLine" id="cb100-3" title="3"></a>
+<a class="sourceLine" id="cb100-4" title="4"><span class="cf">for</span> (i <span class="cf">in</span> valores_n) {</a>
+<a class="sourceLine" id="cb100-5" title="5">  nuevo_valor &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">/</span><span class="st"> </span><span class="kw">sqrt</span>(i) <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>)<span class="op">**</span>n</a>
+<a class="sourceLine" id="cb100-6" title="6">  a_n &lt;-<span class="st"> </span><span class="kw">c</span>(a_n,  nuevo_valor)</a>
+<a class="sourceLine" id="cb100-7" title="7">}</a>
+<a class="sourceLine" id="cb100-8" title="8">a_n</a></code></pre></div>
+<pre><code>##  [1] 1.0000010 0.7071077 0.5773512 0.5000010 0.4472145 0.4082492 0.3779654
+##  [8] 0.3535543 0.3333343 0.3162287</code></pre>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb102-1" title="1"><span class="kw">plot</span>(valores_n, a_n)</a></code></pre></div>
+<p><img src="ModuloProgramacion-IC_files/figure-html/unnamed-chunk-63-1.png" width="672" /></p></li>
+<li><p><span class="math inline">\(d_n = (-1)^{n+5}\)</span></p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb103-1" title="1">valores_n &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb103-2" title="2">d_n &lt;-<span class="st"> </span><span class="kw">c</span>()</a>
+<a class="sourceLine" id="cb103-3" title="3"></a>
+<a class="sourceLine" id="cb103-4" title="4"><span class="cf">for</span> (i <span class="cf">in</span> valores_n) {</a>
+<a class="sourceLine" id="cb103-5" title="5">  nuevo_valor &lt;-<span class="st"> </span>(<span class="op">-</span><span class="dv">1</span>)<span class="op">**</span>(i<span class="op">+</span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb103-6" title="6">  d_n &lt;-<span class="st"> </span><span class="kw">c</span>(d_n,  nuevo_valor)</a>
+<a class="sourceLine" id="cb103-7" title="7">}</a>
+<a class="sourceLine" id="cb103-8" title="8">d_n</a></code></pre></div>
+<pre><code>##  [1]  1 -1  1 -1  1 -1  1 -1  1 -1</code></pre>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb105-1" title="1"><span class="kw">plot</span>(valores_n, d_n)</a></code></pre></div>
+<p><img src="ModuloProgramacion-IC_files/figure-html/unnamed-chunk-64-1.png" width="672" /></p></li>
 </ol></li>
-<li><p><span class="math inline">\(\bigstar\)</span> Retomando el ejercicio de las combinaciones de los dados, escribir un programa que inicie con un vector llamado <code>cantidad</code> de doce posiciones en cero (explorar el comando <code>rep</code>) y que para cada posición calcule cuántas combinaciones de los dados suman el valor indicado por la posición (ej. <code>cantidad[11]</code> vale 2, que son: (5,6) y (6,5)). Graficar los datos obtenidos.</p></li>
+<li><p><span class="math inline">\(\bigstar\)</span> Retomando el ejercicio de las combinaciones de los dados, escribir un programa que inicie con un vector llamado <code>cantidad</code> de doce posiciones en cero (explorar el comando <code>rep</code>) y que para cada posición calcule cuántas combinaciones de los dados suman el valor indicado por la posición (ej. <code>cantidad[11]</code> vale 2, que son: (5,6) y (6,5)). Graficar los datos obtenidos.</p>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb106-1" title="1">cantidad &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">12</span>)</a>
+<a class="sourceLine" id="cb106-2" title="2"><span class="cf">for</span> (dado_azul <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>){</a>
+<a class="sourceLine" id="cb106-3" title="3">  <span class="cf">for</span> (dado_rojo <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>){</a>
+<a class="sourceLine" id="cb106-4" title="4">    valor &lt;-<span class="st"> </span>dado_azul <span class="op">+</span><span class="st"> </span>dado_rojo</a>
+<a class="sourceLine" id="cb106-5" title="5">    cantidad[valor] &lt;-<span class="st"> </span>cantidad[valor] <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb106-6" title="6">  }</a>
+<a class="sourceLine" id="cb106-7" title="7">}</a>
+<a class="sourceLine" id="cb106-8" title="8">cantidad</a></code></pre></div>
+<pre><code>##  [1] 0 1 2 3 4 5 6 5 4 3 2 1</code></pre>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb108-1" title="1"><span class="kw">plot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">12</span>, cantidad)</a></code></pre></div>
+<p><img src="ModuloProgramacion-IC_files/figure-html/unnamed-chunk-65-1.png" width="672" /></p></li>
 <li><p>Hacé un gráfico que refleje la evolución de la temperatura del agua a lo largo del tiempo atendiendo a la siguiente descripción:</p>
-<p>Saqué del fuego una cacerola con agua hirviendo. Al principio, la temperatura bajó con rapidez, de modo que a los 5 minutos estaba en 60 grados. Luego, fue enfriándose con más lentitud. A los 20 minutos de haberla sacado estaba en 30 grados y 20 minutos después seguía teniendo algo más de 20 grados, temperatura que se mantuvo, pues era la temperatura que había en la cocina.</p></li>
+<p>Saqué del fuego una cacerola con agua hirviendo. Al principio, la temperatura bajó con rapidez, de modo que a los 5 minutos estaba en 60 grados. Luego, fue enfriándose con más lentitud. A los 20 minutos de haberla sacado estaba en 30 grados y 20 minutos después seguía teniendo algo más de 20 grados, temperatura que se mantuvo, pues era la temperatura que había en la cocina.</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb109-1" title="1">tiempo &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">20</span>,<span class="dv">40</span>)</a>
+<a class="sourceLine" id="cb109-2" title="2">temp &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">100</span>,<span class="dv">60</span>,<span class="dv">30</span>,<span class="dv">21</span>)</a>
+<a class="sourceLine" id="cb109-3" title="3"><span class="kw">plot</span>(tiempo, temp, <span class="dt">type =</span> <span class="st">&quot;b&quot;</span>)</a></code></pre></div>
+<p><img src="ModuloProgramacion-IC_files/figure-html/unnamed-chunk-66-1.png" width="672" /></p></li>
 <li><p><span class="math inline">\(\bigstar\)</span> Graficar la función <span class="math inline">\(\rho(x)=x^2\)</span>, para <span class="math inline">\(x\in [-10,10]\)</span>.</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" title="1">  x &lt;-<span class="st"> </span><span class="kw">seq</span>(COMPLETAR, COMPLETAR, <span class="fl">0.01</span>) </a>
-<a class="sourceLine" id="cb61-2" title="2">  valores &lt;-<span class="st"> </span><span class="kw">c</span>() </a>
-<a class="sourceLine" id="cb61-3" title="3"></a>
-<a class="sourceLine" id="cb61-4" title="4">  <span class="cf">for</span> (i <span class="cf">in</span> x){</a>
-<a class="sourceLine" id="cb61-5" title="5">    nuevo_valor &lt;-<span class="st"> </span>COMPLETAR</a>
-<a class="sourceLine" id="cb61-6" title="6">    valores &lt;-<span class="st"> </span>COMPLETAR</a>
-<a class="sourceLine" id="cb61-7" title="7">  }</a>
-<a class="sourceLine" id="cb61-8" title="8"></a>
-<a class="sourceLine" id="cb61-9" title="9">  <span class="kw">plot</span>(n, valores, <span class="dt">type =</span> <span class="st">&quot;p&quot;</span>)      </a></code></pre></div></li>
-<li><p>Graficar la función <span class="math inline">\(\rho(x)=|x|\)</span>, para <span class="math inline">\(x\in [-10,10]\)</span>.</p></li>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb110-1" title="1">  x &lt;-<span class="st"> </span><span class="kw">seq</span>(COMPLETAR, COMPLETAR, <span class="fl">0.01</span>) </a>
+<a class="sourceLine" id="cb110-2" title="2">  valores &lt;-<span class="st"> </span><span class="kw">c</span>() </a>
+<a class="sourceLine" id="cb110-3" title="3"></a>
+<a class="sourceLine" id="cb110-4" title="4">  <span class="cf">for</span> (i <span class="cf">in</span> x){</a>
+<a class="sourceLine" id="cb110-5" title="5">    nuevo_valor &lt;-<span class="st"> </span>COMPLETAR</a>
+<a class="sourceLine" id="cb110-6" title="6">    valores &lt;-<span class="st"> </span>COMPLETAR</a>
+<a class="sourceLine" id="cb110-7" title="7">  }</a>
+<a class="sourceLine" id="cb110-8" title="8"></a>
+<a class="sourceLine" id="cb110-9" title="9">  <span class="kw">plot</span>(n, valores, <span class="dt">type =</span> <span class="st">&quot;p&quot;</span>)      </a></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb111-1" title="1">  x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="fl">0.01</span>) </a>
+<a class="sourceLine" id="cb111-2" title="2">  valores &lt;-<span class="st"> </span><span class="kw">c</span>() </a>
+<a class="sourceLine" id="cb111-3" title="3"></a>
+<a class="sourceLine" id="cb111-4" title="4">  <span class="cf">for</span> (i <span class="cf">in</span> x){</a>
+<a class="sourceLine" id="cb111-5" title="5">    nuevo_valor &lt;-<span class="st"> </span>i<span class="op">**</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb111-6" title="6">    valores &lt;-<span class="st"> </span><span class="kw">c</span>(valores, nuevo_valor)</a>
+<a class="sourceLine" id="cb111-7" title="7">  }</a>
+<a class="sourceLine" id="cb111-8" title="8"></a>
+<a class="sourceLine" id="cb111-9" title="9">  <span class="kw">plot</span>(x, valores, <span class="dt">type =</span> <span class="st">&quot;p&quot;</span>)</a></code></pre></div>
+<p><img src="ModuloProgramacion-IC_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p></li>
+<li><p>Graficar la función <span class="math inline">\(\rho(x)=|x|\)</span>, para <span class="math inline">\(x\in [-10,10]\)</span>.</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb112-1" title="1">  x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="fl">0.01</span>) </a>
+<a class="sourceLine" id="cb112-2" title="2">  valores &lt;-<span class="st"> </span><span class="kw">c</span>() </a>
+<a class="sourceLine" id="cb112-3" title="3"></a>
+<a class="sourceLine" id="cb112-4" title="4">  <span class="cf">for</span> (i <span class="cf">in</span> x){</a>
+<a class="sourceLine" id="cb112-5" title="5">    nuevo_valor &lt;-<span class="st"> </span><span class="kw">abs</span>(i)</a>
+<a class="sourceLine" id="cb112-6" title="6">    valores &lt;-<span class="st"> </span><span class="kw">c</span>(valores, nuevo_valor)</a>
+<a class="sourceLine" id="cb112-7" title="7">  }</a>
+<a class="sourceLine" id="cb112-8" title="8"></a>
+<a class="sourceLine" id="cb112-9" title="9">  <span class="kw">plot</span>(x, valores, <span class="dt">type =</span> <span class="st">&quot;p&quot;</span>)</a></code></pre></div>
+<p><img src="ModuloProgramacion-IC_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p></li>
 <li><p><span class="math inline">\(\bigstar\)</span> Considerar <span class="math inline">\(\rho_k: \mathbb R \to \mathbb R\)</span>, definida de la siguiente manera
 <span class="math display">\[\begin{align*}
     \rho_k(x)=\left\{ \begin{matrix} 
@@ -287,8 +542,51 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     2k|x|-k^2 &amp; \text{ si } &amp;  |x| &gt;k
     \end{matrix} \right.
     \end{align*}\]</span></p>
-<p>Calcular y graficar la la función <span class="math inline">\(\rho_k\)</span>, con <span class="math inline">\(k=5\)</span>, para <span class="math inline">\(x\in [-10,10]\)</span>.</p></li>
-<li><p>En el mismo gráfico agregar el valor de la función <span class="math inline">\(\rho_k\)</span> para <span class="math inline">\(k=2\)</span> y <span class="math inline">\(k=8\)</span> utilizando un color diferente para cada valor de <span class="math inline">\(k\)</span></p></li>
+<p>Calcular y graficar la la función <span class="math inline">\(\rho_k\)</span>, con <span class="math inline">\(k=5\)</span>, para <span class="math inline">\(x\in [-10,10]\)</span>.</p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb113-1" title="1">  x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="fl">0.01</span>) </a>
+<a class="sourceLine" id="cb113-2" title="2">  valores &lt;-<span class="st"> </span><span class="kw">c</span>() </a>
+<a class="sourceLine" id="cb113-3" title="3">  k &lt;-<span class="st"> </span><span class="dv">5</span></a>
+<a class="sourceLine" id="cb113-4" title="4"></a>
+<a class="sourceLine" id="cb113-5" title="5">  <span class="cf">for</span> (i <span class="cf">in</span> x){</a>
+<a class="sourceLine" id="cb113-6" title="6">    <span class="cf">if</span> (<span class="kw">abs</span>(i) <span class="op">&lt;=</span><span class="st"> </span>k) {</a>
+<a class="sourceLine" id="cb113-7" title="7">      nuevo_valor &lt;-<span class="st"> </span>i<span class="op">**</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb113-8" title="8">    } <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb113-9" title="9">      nuevo_valor &lt;-<span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>k <span class="op">*</span><span class="st"> </span><span class="kw">abs</span>(i) <span class="op">-</span><span class="st"> </span>k<span class="op">**</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb113-10" title="10">    }</a>
+<a class="sourceLine" id="cb113-11" title="11">    valores &lt;-<span class="st"> </span><span class="kw">c</span>(valores, nuevo_valor)</a>
+<a class="sourceLine" id="cb113-12" title="12">  }</a>
+<a class="sourceLine" id="cb113-13" title="13"></a>
+<a class="sourceLine" id="cb113-14" title="14">  <span class="kw">plot</span>(x, valores, <span class="dt">type =</span> <span class="st">&quot;p&quot;</span>)</a></code></pre></div>
+<p><img src="ModuloProgramacion-IC_files/figure-html/unnamed-chunk-70-1.png" width="672" /></p></li>
+<li><p>En el mismo gráfico agregar el valor de la función <span class="math inline">\(\rho_k\)</span> para <span class="math inline">\(k=2\)</span> y <span class="math inline">\(k=8\)</span> utilizando un color diferente para cada valor de <span class="math inline">\(k\)</span></p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb114-1" title="1">  x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="fl">0.01</span>)  </a>
+<a class="sourceLine" id="cb114-2" title="2">  valores_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">c</span>() </a>
+<a class="sourceLine" id="cb114-3" title="3">  valores_<span class="dv">5</span> &lt;-<span class="st"> </span><span class="kw">c</span>() </a>
+<a class="sourceLine" id="cb114-4" title="4">  valores_<span class="dv">8</span> &lt;-<span class="st"> </span><span class="kw">c</span>() </a>
+<a class="sourceLine" id="cb114-5" title="5"></a>
+<a class="sourceLine" id="cb114-6" title="6">  <span class="cf">for</span> (i <span class="cf">in</span> x){</a>
+<a class="sourceLine" id="cb114-7" title="7">    <span class="cf">if</span> (<span class="kw">abs</span>(i) <span class="op">&lt;=</span><span class="st"> </span><span class="dv">2</span>) {</a>
+<a class="sourceLine" id="cb114-8" title="8">      valores_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">c</span>(valores_<span class="dv">2</span>, i<span class="op">**</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb114-9" title="9">    } <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb114-10" title="10">      valores_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">c</span>(valores_<span class="dv">2</span>, <span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="kw">abs</span>(i) <span class="op">-</span><span class="st"> </span><span class="dv">2</span><span class="op">**</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb114-11" title="11">    }</a>
+<a class="sourceLine" id="cb114-12" title="12">    <span class="cf">if</span> (<span class="kw">abs</span>(i) <span class="op">&lt;=</span><span class="st"> </span><span class="dv">5</span>) {</a>
+<a class="sourceLine" id="cb114-13" title="13">      valores_<span class="dv">5</span> &lt;-<span class="st"> </span><span class="kw">c</span>(valores_<span class="dv">5</span>, i<span class="op">**</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb114-14" title="14">    } <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb114-15" title="15">      valores_<span class="dv">5</span> &lt;-<span class="st"> </span><span class="kw">c</span>(valores_<span class="dv">5</span>, <span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="dv">5</span> <span class="op">*</span><span class="st"> </span><span class="kw">abs</span>(i) <span class="op">-</span><span class="st"> </span><span class="dv">5</span><span class="op">**</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb114-16" title="16">    }        </a>
+<a class="sourceLine" id="cb114-17" title="17">    <span class="cf">if</span> (<span class="kw">abs</span>(i) <span class="op">&lt;=</span><span class="st"> </span><span class="dv">8</span>) {</a>
+<a class="sourceLine" id="cb114-18" title="18">      valores_<span class="dv">8</span> &lt;-<span class="st"> </span><span class="kw">c</span>(valores_<span class="dv">8</span>, i<span class="op">**</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb114-19" title="19">    } <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb114-20" title="20">      valores_<span class="dv">8</span> &lt;-<span class="st"> </span><span class="kw">c</span>(valores_<span class="dv">8</span>, <span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="dv">8</span> <span class="op">*</span><span class="st"> </span><span class="kw">abs</span>(i) <span class="op">-</span><span class="st"> </span><span class="dv">8</span><span class="op">**</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb114-21" title="21">    }</a>
+<a class="sourceLine" id="cb114-22" title="22">  } </a>
+<a class="sourceLine" id="cb114-23" title="23"></a>
+<a class="sourceLine" id="cb114-24" title="24">  <span class="kw">plot</span>(x, valores_<span class="dv">2</span>, <span class="dt">type =</span> <span class="st">&quot;p&quot;</span>, <span class="dt">col=</span><span class="st">&quot;green&quot;</span>,<span class="dt">pch=</span><span class="dv">15</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">100</span>), <span class="dt">ylab =</span> <span class="st">&quot;Resultado&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Valor&quot;</span>)</a>
+<a class="sourceLine" id="cb114-25" title="25">  <span class="kw">points</span>(x, valores_<span class="dv">5</span>, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">pch=</span><span class="dv">16</span>)</a>
+<a class="sourceLine" id="cb114-26" title="26">  <span class="kw">points</span>(x, valores_<span class="dv">8</span>, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">pch=</span><span class="dv">17</span>)</a>
+<a class="sourceLine" id="cb114-27" title="27">  <span class="kw">legend</span>(<span class="op">-</span><span class="fl">10.5</span>,<span class="dv">26</span>,<span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;k=8&quot;</span>,<span class="st">&quot;k=5&quot;</span>,<span class="st">&quot;k=2&quot;</span>), <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;green&quot;</span>), <span class="dt">pch =</span> <span class="kw">c</span>(<span class="dv">17</span>,<span class="dv">16</span>,<span class="dv">15</span>))</a></code></pre></div>
+<p><img src="ModuloProgramacion-IC_files/figure-html/graficofinal-1.png" width="672" /></p></li>
 </ol>
 <!-- 1. Para cada uno de los conjuntos de datos dados, graficar el polinomio *p(x)* interpolador de grado menor o igual que 3. -->
 <!--     a. -->
@@ -311,8 +609,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="clase01.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="clase01.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="clase03.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
