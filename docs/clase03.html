@@ -230,8 +230,8 @@ Dada una tabla de puntos <span class="math inline">\(\{(x_i,y_i)\}_{i=0,\ldots,n
 <p>El polinomio se calcula cuando tenemos tres puntos según: (ver clase 1 del módulo de análisis).</p>
 <p>Generalización:</p>
 <ul>
-<li><p>¿Cómo generalizamos este procedimiento a mís puntos? Definimos <span class="math display">\[l_i(x)=\frac{\prod_{j\not=i}(x-x_j)}{\prod_{j\not=i}(x_i-x_j)}\;, i=0,\ldots,n\;.\]</span></p></li>
-<li><p>¿Cuál es la gracia? Simple, <span class="math inline">\(l_i(x_i)=1\)</span> mientras que <span class="math inline">\(l_i(x_j)=0\)</span> si <span class="math inline">\(j\not=i\)</span>. Luego, el polonomio interpolador está definido por <span class="math display">\[p_n(x)=\sum_{i=0}^n y_i l_i(x)\;.\]</span></p></li>
+<li><p>¿Cómo generalizamos este procedimiento a mís puntos? Definimos <span class="math display">\[l_i(x)=\frac{\prod_{j \neq i}(x-x_j)}{\prod_{j \neq i}(x_i-x_j)}\;, i=0,\ldots,n\;.\]</span></p></li>
+<li><p>¿Cuál es la gracia? Simple, <span class="math inline">\(l_i(x_i)=1\)</span> mientras que <span class="math inline">\(l_i(x_j)=0\)</span> si <span class="math inline">\(j \neq i\)</span>. Luego, el polonomio interpolador está definido por <span class="math display">\[p_n(x)=\sum_{i=0}^n y_i l_i(x)\;.\]</span></p></li>
 </ul>
 <p>Miramos los datos de co2 que ya vimos en el módulo de análisis:</p>
 <div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb119-1" title="1">  fechas &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">1992</span>, <span class="dt">to=</span><span class="dv">2018</span>, <span class="dt">by=</span><span class="dv">2</span>)</a>
@@ -385,7 +385,7 @@ y
 </div>
 <div id="parte-b-dataframes" class="section level2">
 <h2><span class="header-section-number">3.2</span> Parte B: DataFrames</h2>
-<p>Vamos a trabajar con la base de datos <em>Iris</em>. Esta es una base de datos muy conocida y utilizada en cursos introductorios. Para más información <a href="https://en.wikipedia.org/wiki/Iris_flower_data_set">mirá acá</a>. Por defecto, la base de datos <em>Iris</em> viene con la instalación de R. Si queres ver como se ve hacé:</p>
+<p>Vamos a trabajar con la base de datos <em>Iris</em>. Esta es una base de datos muy conocida y utilizada en cursos introductorios. Para más información <a href="https://en.wikipedia.org/wiki/Iris_flower_data_set">mirá acá</a>. Por defecto, la base de datos <em>Iris</em> viene con la instalación de R. Si queres ver como se ve hace:</p>
 <div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb129-1" title="1"><span class="kw">head</span>(iris)</a></code></pre></div>
 <pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 ## 1          5.1         3.5          1.4         0.2  setosa
@@ -405,7 +405,6 @@ y
 <li><p>Asociación entre rasgos paternos y tamaño de la bola de cría en el escarabajo estercolero <em>Sulcophanaeus</em> sp.</p>
 <p>Los rasgos de los padres suelen afectar el desarrollo de rasgos de su cría. Un mecanismo por el cual los padres pueden influir en el fenotipo de la descendencia es a través del nivel de cuidado que proporcionan. <em>Sulcophanaeus</em> sp (Coleoptera, Scarabaeidae) es un escarabajo estercolero con cuidados biparentales. El macho construye una bola de cría formada por estiércol, en la que la hembra deposita un huevo, que al eclosionar se alimenta de esa masa. Se sabe que cuanto mayor es el tamaño de la bola de cría, mayor es la disponibilidad de alimento y mayor el desarrollo de la cría, pero se desconocen los factores que regulan el tamaño de las bolas de cría. Los machos presentan además variaciones en el tamaño de sus cuernos, que utilizan durante las peleas por las hembras permitiendoles incrementar su éxito reproductivo. Se desea probar la hipótesis de que ambas características morfológicas de los machos (tamaño corporal y la longitud de los cuernos) afectan en forma sinérgica el tamaño de las bolas de cría. Para demostrarlo se capturaron ejemplares adultos en la provincia de Buenos Aires y se les midió el largo corporal total (LT) y del cuerno (LC), ambos en mm. Se seleccionaron machos de manera de cubrir el rango de combinaciones de tamaños y se los cruzó con una hembra de tamaño promedio. Cada pareja fue mantenida en una cámara de cría individual con estiércol de vaca. Se obtuvieron 75 bolas de cría, a las que se les determinó el peso seco (PS), en gramos. Los resultados se encuentran en el archivo <a href="escarab.csv">escarab.csv (click para descargar)</a></p>
 <p>Lea el archivo de datos y calcule los valores medios para cada una de las mediciones <code>LT</code>, <code>LC</code> y <code>PS</code>.</p></li>
-<li><p>Hacé una función que dada una <em>variable de interés</em> devuelva la especie que posea la mayor media para ese atributo.</p></li>
 <li><p>Hacer una función que dada una <em>variable de interés</em> devuelva la especie que posea la mayor media para ese atributo.</p></li>
 <li><p>Ahora hacer una función que dada una <em>variable de interés</em> devuelva la especie que posea la menor varianza para ese atributo.</p></li>
 </ol>
@@ -417,7 +416,7 @@ Hay diferentes formas de crear dispositivos donde realizar gráficos, por ejempl
 <p>En términos generales, la ventana de dibujo en R puede dividirse en tres partes: un área de dibujo, un margen interno y un margen externo. La función <em>par()</em> permite ajustar el tamaño de los márgenes (abajo, izquierda, arriba, derecho), a partir del ajuste de los parámetros <em>mar</em> (margin size) y <em>oma</em> (outer margin area).</p>
 <p>Para generar distintos sub-gráficos en una misma figura pueden usarse los parámetros <em>mfrow</em> o <em>mfcol</em> de la función <em>par()</em>.</p>
 <ol style="list-style-type: decimal">
-<li><p>Realizá los siguientes gráficos y analizá qué significan los parámetros <em>main</em>, <em>xlab</em>, <em>ylab</em>, <em>pch</em> y <em>col</em>.</p>
+<li><p>Realizar los siguientes gráficos y analizá qué significan los parámetros <em>main</em>, <em>xlab</em>, <em>ylab</em>, <em>pch</em> y <em>col</em>.</p>
 <div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb131-1" title="1"><span class="kw">plot</span>(iris<span class="op">$</span>Sepal.Length, iris<span class="op">$</span>Sepal.Width, <span class="dt">col=</span>iris<span class="op">$</span>Species)</a></code></pre></div>
 <div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb132-1" title="1"><span class="kw">pairs</span>(iris[,<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>], <span class="dt">pch=</span><span class="kw">as.numeric</span>(iris<span class="op">$</span>Species))</a></code></pre></div>
 <div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb133-1" title="1"><span class="kw">hist</span>(iris<span class="op">$</span>Sepal.Length, <span class="dt">ylab=</span><span class="st">&quot;Frecuencia&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Longitud del Sépalo&quot;</span>)</a></code></pre></div>
@@ -428,14 +427,14 @@ Hay diferentes formas de crear dispositivos donde realizar gráficos, por ejempl
 <div id="gráficos-básicos-probando-modificar-parámetros" class="section level3">
 <h3><span class="header-section-number">3.2.2</span> Gráficos básicos: Probando modificar parámetros</h3>
 <ol style="list-style-type: decimal">
-<li><p>Intentá modificar el número de divisiones en el histograma utilizando el parámetro <em>breaks</em>. Una vez hecho esto, probá ingresar:</p>
+<li><p>Modificar el número de divisiones en el histograma utilizando el parámetro <em>breaks</em>. Una vez hecho esto, ingresar:</p>
 <div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb136-1" title="1"><span class="kw">plot</span>(<span class="kw">density</span>(iris<span class="op">$</span>Sepal.Length), <span class="dt">main=</span><span class="st">&quot;Densidad de LongSepalo&quot;</span>)</a></code></pre></div></li>
-<li><p>Hace en una ventana aparte un gráfico subdividido en cuatro donde se muestre el histograma de cada una de las variables medidas.</p></li>
-<li><p>Hace un gráfico adecuado para las 4 variables registradas en las 150 flores. Analizá qué se está representando e investigá la presencia de datos atípicos en los datos.</p></li>
-<li><p>Ahora hace un boxplot para cada variable pero discriminando por especie.</p></li>
-<li><p>Al boxplot que hiciste recien rotulale los ejes con titulos adecuados.</p></li>
-<li><p>Explora como modificar los colores con los que se grafica cada especie.</p></li>
-<li><p>Trata de mover la posición de la leyenda del gráfico a otra zona.</p></li>
+<li><p>Hacer en una ventana aparte un gráfico subdividido en cuatro donde se muestre el histograma de cada una de las variables medidas.</p></li>
+<li><p>Hacer un gráfico adecuado para las 4 variables registradas en las 150 flores. Analizar qué se está representando e investigar la presencia de datos atípicos en los datos.</p></li>
+<li><p>Hacer un boxplot para cada variable pero discriminando por especie.</p></li>
+<li><p>Al boxplot del punto anterior rotularle los ejes con titulos adecuados.</p></li>
+<li><p>Explorar como modificar los colores con los que se grafica cada especie.</p></li>
+<li><p>Mover la posición de la leyenda del gráfico a otra zona.</p></li>
 </ol>
 
 </div>
