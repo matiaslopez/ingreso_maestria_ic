@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="clase02.html"/>
-
+<link rel="next" href="clase04.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -143,6 +143,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2.2" data-path="clase03.html"><a href="clase03.html#gráficos-básicos-probando-modificar-parámetros"><i class="fa fa-check"></i><b>3.2.2</b> Gráficos básicos: Probando modificar parámetros</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="clase04.html"><a href="clase04.html"><i class="fa fa-check"></i><b>4</b> Modelado: Álbum de figuritas</a><ul>
+<li class="chapter" data-level="4.1" data-path="clase04.html"><a href="clase04.html#algunas-herramientas-útiles-de-r"><i class="fa fa-check"></i><b>4.1</b> Algunas herramientas útiles de R</a></li>
+<li class="chapter" data-level="4.2" data-path="clase04.html"><a href="clase04.html#el-álbum-de-figuritas"><i class="fa fa-check"></i><b>4.2</b> El álbum de figuritas</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="clase04.html"><a href="clase04.html#datos"><i class="fa fa-check"></i><b>4.2.1</b> Datos</a></li>
+<li class="chapter" data-level="4.2.2" data-path="clase04.html"><a href="clase04.html#primer-modelo-las-figuritas-se-compran-de-a-una"><i class="fa fa-check"></i><b>4.2.2</b> Primer modelo: Las figuritas se compran de a una</a></li>
+<li class="chapter" data-level="4.2.3" data-path="clase04.html"><a href="clase04.html#segundo-modelo-las-figuritas-se-compran-por-paquetes"><i class="fa fa-check"></i><b>4.2.3</b> Segundo modelo: Las figuritas se compran por paquetes</a></li>
+</ul></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -174,45 +182,256 @@ Deberá entregar todos los ejercicios en un archivo .R. Cada ejercicio debe esta
 <div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb115-1" title="1">de_celsius_a_farenheit &lt;-<span class="st"> </span><span class="cf">function</span>(COMPLETAR){</a>
 <a class="sourceLine" id="cb115-2" title="2">  res &lt;-<span class="st"> </span>COMPLETAR</a>
 <a class="sourceLine" id="cb115-3" title="3">  <span class="kw">return</span>(res)</a>
-<a class="sourceLine" id="cb115-4" title="4">}</a></code></pre></div></li>
-<li><p>Escribir otra que se comporte a la inversa.</p></li>
+<a class="sourceLine" id="cb115-4" title="4">}</a></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb116-1" title="1">de_celsius_a_farenheit &lt;-<span class="st"> </span><span class="cf">function</span>(grados_c){</a>
+<a class="sourceLine" id="cb116-2" title="2">  res &lt;-<span class="st"> </span>grados_c <span class="op">*</span><span class="st"> </span><span class="dv">9</span><span class="op">/</span><span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">32</span></a>
+<a class="sourceLine" id="cb116-3" title="3">  <span class="kw">return</span>(res)</a>
+<a class="sourceLine" id="cb116-4" title="4">}</a>
+<a class="sourceLine" id="cb116-5" title="5"></a>
+<a class="sourceLine" id="cb116-6" title="6"><span class="kw">de_celsius_a_farenheit</span>(<span class="dv">30</span>)</a></code></pre></div>
+<pre><code>## [1] 86</code></pre>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb118-1" title="1"><span class="kw">de_celsius_a_farenheit</span>(<span class="dv">10</span>)</a></code></pre></div>
+<pre><code>## [1] 50</code></pre></li>
+<li><p>Escribir otra que se comporte a la inversa.</p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb120-1" title="1">de_farenheit_a_celsius &lt;-<span class="st"> </span><span class="cf">function</span>(grados_f){</a>
+<a class="sourceLine" id="cb120-2" title="2">  res &lt;-<span class="st"> </span>(grados_f  <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">*</span><span class="st"> </span><span class="dv">5</span><span class="op">/</span><span class="dv">9</span></a>
+<a class="sourceLine" id="cb120-3" title="3">  <span class="kw">return</span>(res)</a>
+<a class="sourceLine" id="cb120-4" title="4">}</a>
+<a class="sourceLine" id="cb120-5" title="5"></a>
+<a class="sourceLine" id="cb120-6" title="6"><span class="kw">de_farenheit_a_celsius</span>(<span class="dv">90</span>)</a></code></pre></div>
+<pre><code>## [1] 32.22222</code></pre>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb122-1" title="1"><span class="kw">de_farenheit_a_celsius</span>(<span class="dv">45</span>)</a></code></pre></div>
+<pre><code>## [1] 7.222222</code></pre>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb124-1" title="1"><span class="kw">de_farenheit_a_celsius</span>(<span class="kw">de_celsius_a_farenheit</span>(<span class="dv">20</span>))</a></code></pre></div>
+<pre><code>## [1] 20</code></pre></li>
 <li><p>Escribir una función que junte las funcionalidades de las 2 anteriores. Para hacerlo agregue un parámetro extra que si es TRUE la entrada se asume en Celsius (y se espera la salida en Farenheit) y si es FALSE se asume la entrada en Farenheit.</p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb116-1" title="1">calcular_equivalencia &lt;-<span class="st"> </span><span class="cf">function</span>(grados, en_celsius){</a>
-<a class="sourceLine" id="cb116-2" title="2">  COMPLETAR</a>
-<a class="sourceLine" id="cb116-3" title="3"></a>
-<a class="sourceLine" id="cb116-4" title="4">  COMPLETAR</a>
-<a class="sourceLine" id="cb116-5" title="5">  <span class="kw">return</span>(res)</a>
-<a class="sourceLine" id="cb116-6" title="6">}</a></code></pre></div></li>
-<li><p>Escribir una función que tomes 2 parámetros, el tamaño de una lado y la cantidad de lados de un polígono regular y que devuelva el perímetro</p></li>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb126-1" title="1">calcular_equivalencia &lt;-<span class="st"> </span><span class="cf">function</span>(grados, en_celsius){</a>
+<a class="sourceLine" id="cb126-2" title="2">  COMPLETAR</a>
+<a class="sourceLine" id="cb126-3" title="3"></a>
+<a class="sourceLine" id="cb126-4" title="4">  COMPLETAR</a>
+<a class="sourceLine" id="cb126-5" title="5">  <span class="kw">return</span>(res)</a>
+<a class="sourceLine" id="cb126-6" title="6">}</a></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb127-1" title="1">calcular_equivalencia &lt;-<span class="st"> </span><span class="cf">function</span>(grados, en_celsius){</a>
+<a class="sourceLine" id="cb127-2" title="2">  <span class="cf">if</span>(en_celsius){</a>
+<a class="sourceLine" id="cb127-3" title="3">    res &lt;-<span class="st"> </span><span class="kw">de_celsius_a_farenheit</span>(grados)</a>
+<a class="sourceLine" id="cb127-4" title="4">  } <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb127-5" title="5">    res &lt;-<span class="st"> </span><span class="kw">de_farenheit_a_celsius</span>(grados)</a>
+<a class="sourceLine" id="cb127-6" title="6">  }</a>
+<a class="sourceLine" id="cb127-7" title="7">  <span class="kw">return</span>(res)</a>
+<a class="sourceLine" id="cb127-8" title="8">}</a>
+<a class="sourceLine" id="cb127-9" title="9"></a>
+<a class="sourceLine" id="cb127-10" title="10"><span class="kw">calcular_equivalencia</span>(<span class="dv">10</span>, <span class="ot">TRUE</span>)</a></code></pre></div>
+<pre><code>## [1] 50</code></pre>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb129-1" title="1"><span class="kw">calcular_equivalencia</span>(<span class="dv">50</span>, <span class="ot">TRUE</span>)</a></code></pre></div>
+<pre><code>## [1] 122</code></pre>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb131-1" title="1"><span class="kw">calcular_equivalencia</span>(<span class="dv">50</span>, <span class="ot">FALSE</span>)</a></code></pre></div>
+<pre><code>## [1] 10</code></pre></li>
+<li><p>Escribir una función que tomes 2 parámetros, el tamaño de una lado y la cantidad de lados de un polígono regular y que devuelva el perímetro</p>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb133-1" title="1">perimetro &lt;-<span class="st"> </span><span class="cf">function</span>(lado, cantidad){</a>
+<a class="sourceLine" id="cb133-2" title="2">    res &lt;-<span class="st"> </span>lado <span class="op">*</span><span class="st"> </span>cantidad</a>
+<a class="sourceLine" id="cb133-3" title="3">    <span class="kw">return</span>(res)</a>
+<a class="sourceLine" id="cb133-4" title="4">}</a>
+<a class="sourceLine" id="cb133-5" title="5"></a>
+<a class="sourceLine" id="cb133-6" title="6"><span class="kw">perimetro</span>(<span class="dv">8</span>,<span class="dv">3</span>)</a></code></pre></div>
+<pre><code>## [1] 24</code></pre>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb135-1" title="1"><span class="kw">perimetro</span>(<span class="dv">10</span>,<span class="dv">3</span>)</a></code></pre></div>
+<pre><code>## [1] 30</code></pre>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb137-1" title="1"><span class="kw">perimetro</span>(<span class="dv">10</span>,<span class="dv">4</span>)</a></code></pre></div>
+<pre><code>## [1] 40</code></pre>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb139-1" title="1"><span class="kw">perimetro</span>(<span class="dv">9</span>,<span class="dv">15</span>)</a></code></pre></div>
+<pre><code>## [1] 135</code></pre></li>
 <li><p>Escribir una función que tome un vector (que se asume tiene al menos 1 elemento) y un segundo parámetro e indique si dicho vector lo contiene o no. Dar 2 implementaciones:</p>
 <ol style="list-style-type: lower-alpha">
-<li><p>Con ciclos</p></li>
-<li><p>Sin ciclos (con funciones de vectores)</p></li>
+<li><p>Con ciclos</p>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb141-1" title="1">contiene &lt;-<span class="st"> </span><span class="cf">function</span>(vs, i){</a>
+<a class="sourceLine" id="cb141-2" title="2">  res &lt;-<span class="st"> </span><span class="ot">FALSE</span></a>
+<a class="sourceLine" id="cb141-3" title="3">  <span class="cf">for</span> (v <span class="cf">in</span> vs) {</a>
+<a class="sourceLine" id="cb141-4" title="4">    <span class="cf">if</span> (v<span class="op">==</span>i) {</a>
+<a class="sourceLine" id="cb141-5" title="5">      res &lt;-<span class="st"> </span><span class="ot">TRUE</span></a>
+<a class="sourceLine" id="cb141-6" title="6">    }</a>
+<a class="sourceLine" id="cb141-7" title="7">  }</a>
+<a class="sourceLine" id="cb141-8" title="8">  <span class="kw">return</span>(res)</a>
+<a class="sourceLine" id="cb141-9" title="9">}</a>
+<a class="sourceLine" id="cb141-10" title="10"></a>
+<a class="sourceLine" id="cb141-11" title="11"><span class="kw">contiene</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>), <span class="dv">2</span>)</a></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb143-1" title="1"><span class="kw">contiene</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>), <span class="dv">3</span>)</a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre></li>
+<li><p>Sin ciclos (con funciones de vectores)</p>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb145-1" title="1">contiene_v2 &lt;-<span class="st"> </span><span class="cf">function</span>(vs, i){</a>
+<a class="sourceLine" id="cb145-2" title="2">  res &lt;-<span class="st"> </span><span class="kw">any</span>(vs<span class="op">==</span>i)</a>
+<a class="sourceLine" id="cb145-3" title="3">  <span class="kw">return</span>(res)</a>
+<a class="sourceLine" id="cb145-4" title="4">}</a>
+<a class="sourceLine" id="cb145-5" title="5"></a>
+<a class="sourceLine" id="cb145-6" title="6"><span class="kw">contiene_v2</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>), <span class="dv">2</span>)</a></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb147-1" title="1"><span class="kw">contiene_v2</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>), <span class="dv">3</span>)</a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre></li>
 </ol></li>
-<li><p>Escribir una función que tome la altura y el peso de una persona y devuelva el índice de masa corporal (<code>IMC = peso / altura^2</code>).</p></li>
-<li><p>Escribir una función que tome un valor <code>a</code> y un vector <code>vec</code> (que asumimos contiene a <code>a</code>). La misma deberá recorrer el vector <strong>con un ciclo</strong> y retornar el número de posición en la se encuentra <code>a</code>.</p></li>
-<li><p>Escribir una función que tome un valor <code>a</code> y un vector <code>vec</code>. La misma deberá indicar cuántas veces el valor a aparece en el vector vec. Pensar 2 implementaciones: con <code>for</code> y con <code>while</code>.</p></li>
-<li><p>Escribir una función que calcule la suma de los primeros n naturales. No vale usar fórmulas cerradas, ni funciones pre-definidas que lo calcule, implementarla usando ciclos <code>while</code>.</p></li>
-<li><p>Escribir una función que calcule el producto de los primeros n naturales. No vale usar fórmulas cerradas, ni funciones pre-definidas que lo calcule, implementarla usando ciclos <code>while</code>.</p></li>
+<li><p>Escribir una función que tome la altura y el peso de una persona y devuelva el índice de masa corporal (<code>IMC = peso / altura^2</code>).</p>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb149-1" title="1">peso &lt;-<span class="st"> </span><span class="dv">80</span></a>
+<a class="sourceLine" id="cb149-2" title="2">altura &lt;-<span class="st"> </span><span class="fl">1.78</span></a>
+<a class="sourceLine" id="cb149-3" title="3"></a>
+<a class="sourceLine" id="cb149-4" title="4">imc &lt;-<span class="st"> </span>peso <span class="op">/</span><span class="st"> </span>altura<span class="op">^</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb149-5" title="5"></a>
+<a class="sourceLine" id="cb149-6" title="6">imc</a></code></pre></div>
+<pre><code>## [1] 25.24934</code></pre></li>
+<li><p>Escribir una función que tome un valor <code>a</code> y un vector <code>vec</code> (que asumimos contiene a <code>a</code>). La misma deberá recorrer el vector <strong>con un ciclo</strong> y retornar el número de posición en la se encuentra <code>a</code>.</p>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb151-1" title="1">posicion &lt;-<span class="st"> </span><span class="cf">function</span>(a, vec){</a>
+<a class="sourceLine" id="cb151-2" title="2">  i &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb151-3" title="3">  <span class="cf">while</span> (vec[i]<span class="op">!=</span>a) {</a>
+<a class="sourceLine" id="cb151-4" title="4">    i &lt;-<span class="st"> </span>i <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb151-5" title="5">  }</a>
+<a class="sourceLine" id="cb151-6" title="6">  <span class="kw">return</span>(i)</a>
+<a class="sourceLine" id="cb151-7" title="7">}</a>
+<a class="sourceLine" id="cb151-8" title="8"></a>
+<a class="sourceLine" id="cb151-9" title="9"><span class="kw">posicion</span>(<span class="dv">3</span>, <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">3</span>))</a></code></pre></div>
+<pre><code>## [1] 6</code></pre>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb153-1" title="1"><span class="kw">posicion</span>(<span class="dv">4</span>, <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>))</a></code></pre></div>
+<pre><code>## [1] 1</code></pre></li>
+<li><p>Escribir una función que tome un valor <code>a</code> y un vector <code>vec</code>. La misma deberá indicar cuántas veces el valor a aparece en el vector vec. Pensar 2 implementaciones: con <code>for</code> y con <code>while</code>.</p>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb155-1" title="1">cantidad_apariciones &lt;-<span class="st"> </span><span class="cf">function</span>(a, vec){</a>
+<a class="sourceLine" id="cb155-2" title="2">  i &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb155-3" title="3">  contador &lt;-<span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb155-4" title="4">  <span class="cf">while</span> (i<span class="op">&lt;=</span><span class="kw">length</span>(vec)) {</a>
+<a class="sourceLine" id="cb155-5" title="5">    <span class="cf">if</span> (vec[i]<span class="op">==</span>a){</a>
+<a class="sourceLine" id="cb155-6" title="6">      contador &lt;-<span class="st"> </span>contador <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb155-7" title="7">    }</a>
+<a class="sourceLine" id="cb155-8" title="8">    i &lt;-<span class="st"> </span>i <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb155-9" title="9">  }</a>
+<a class="sourceLine" id="cb155-10" title="10">  <span class="kw">return</span>(contador)</a>
+<a class="sourceLine" id="cb155-11" title="11">}</a>
+<a class="sourceLine" id="cb155-12" title="12"></a>
+<a class="sourceLine" id="cb155-13" title="13">cantidad_apariciones_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="cf">function</span>(a, vec){</a>
+<a class="sourceLine" id="cb155-14" title="14">  contador &lt;-<span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb155-15" title="15">  <span class="cf">for</span> (elem <span class="cf">in</span> vec) {</a>
+<a class="sourceLine" id="cb155-16" title="16">    <span class="cf">if</span> (elem<span class="op">==</span>a){</a>
+<a class="sourceLine" id="cb155-17" title="17">      contador &lt;-<span class="st"> </span>contador <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb155-18" title="18">    }</a>
+<a class="sourceLine" id="cb155-19" title="19">  }</a>
+<a class="sourceLine" id="cb155-20" title="20">  <span class="kw">return</span>(contador)</a>
+<a class="sourceLine" id="cb155-21" title="21">}</a>
+<a class="sourceLine" id="cb155-22" title="22"></a>
+<a class="sourceLine" id="cb155-23" title="23"><span class="kw">cantidad_apariciones</span>(<span class="dv">3</span>, <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">3</span>))</a></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb157-1" title="1"><span class="kw">cantidad_apariciones_2</span>(<span class="dv">3</span>, <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">3</span>))</a></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb159-1" title="1"><span class="kw">cantidad_apariciones</span>(<span class="dv">4</span>, <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>))</a></code></pre></div>
+<pre><code>## [1] 4</code></pre>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb161-1" title="1"><span class="kw">cantidad_apariciones_2</span>(<span class="dv">4</span>, <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>))</a></code></pre></div>
+<pre><code>## [1] 4</code></pre></li>
+<li><p>Escribir una función que calcule la suma de los primeros n naturales. No vale usar fórmulas cerradas, ni funciones pre-definidas que lo calcule, implementarla usando ciclos <code>while</code>.</p>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb163-1" title="1">suma_primeros_n &lt;-<span class="st"> </span><span class="cf">function</span>(n){</a>
+<a class="sourceLine" id="cb163-2" title="2">  suma &lt;-<span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb163-3" title="3">  <span class="cf">while</span> (n <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb163-4" title="4">    suma &lt;-<span class="st"> </span>suma <span class="op">+</span><span class="st"> </span>n</a>
+<a class="sourceLine" id="cb163-5" title="5">    n &lt;-<span class="st"> </span>n <span class="op">-</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb163-6" title="6">  }</a>
+<a class="sourceLine" id="cb163-7" title="7">  <span class="kw">return</span>(suma)</a>
+<a class="sourceLine" id="cb163-8" title="8">}</a>
+<a class="sourceLine" id="cb163-9" title="9"></a>
+<a class="sourceLine" id="cb163-10" title="10"><span class="kw">suma_primeros_n</span>(<span class="dv">3</span>)</a></code></pre></div>
+<pre><code>## [1] 6</code></pre>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb165-1" title="1"><span class="kw">suma_primeros_n</span>(<span class="dv">10</span>)</a></code></pre></div>
+<pre><code>## [1] 55</code></pre></li>
+<li><p>Escribir una función que calcule el producto de los primeros n naturales. No vale usar fórmulas cerradas, ni funciones pre-definidas que lo calcule, implementarla usando ciclos <code>while</code>.</p>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb167-1" title="1">prod_primeros_n &lt;-<span class="st"> </span><span class="cf">function</span>(n){</a>
+<a class="sourceLine" id="cb167-2" title="2">  suma &lt;-<span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb167-3" title="3">  <span class="cf">while</span> (n <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb167-4" title="4">    suma &lt;-<span class="st"> </span>suma <span class="op">*</span><span class="st"> </span>n</a>
+<a class="sourceLine" id="cb167-5" title="5">    n &lt;-<span class="st"> </span>n <span class="op">-</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb167-6" title="6">  }</a>
+<a class="sourceLine" id="cb167-7" title="7">  <span class="kw">return</span>(suma)</a>
+<a class="sourceLine" id="cb167-8" title="8">}</a>
+<a class="sourceLine" id="cb167-9" title="9"></a>
+<a class="sourceLine" id="cb167-10" title="10"><span class="kw">prod_primeros_n</span>(<span class="dv">3</span>)</a></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb169-1" title="1"><span class="kw">prod_primeros_n</span>(<span class="dv">10</span>)</a></code></pre></div>
+<pre><code>## [1] 0</code></pre></li>
 <li><p>Escribir una función que dado un número natural calcule un paso de la función de Collatz. Recordar que dice:</p>
 <p><span class="math display">\[
   collatz(n) = \begin{cases}
         n/2 &amp;\mbox{si n es par} \\
         (3n + 1) &amp; \mbox{si no } \end{cases}
-\]</span></p></li>
+\]</span></p>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb171-1" title="1">un_collatz &lt;-<span class="st"> </span><span class="cf">function</span>(n) {</a>
+<a class="sourceLine" id="cb171-2" title="2">  <span class="cf">if</span> (n <span class="op">%%</span><span class="st"> </span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb171-3" title="3">    n &lt;-<span class="st"> </span>n <span class="op">/</span><span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb171-4" title="4">  } <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb171-5" title="5">    n &lt;-<span class="st">  </span><span class="dv">3</span> <span class="op">*</span><span class="st"> </span>n <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb171-6" title="6">  }</a>
+<a class="sourceLine" id="cb171-7" title="7">  <span class="kw">return</span>(n)</a>
+<a class="sourceLine" id="cb171-8" title="8">}</a>
+<a class="sourceLine" id="cb171-9" title="9"></a>
+<a class="sourceLine" id="cb171-10" title="10"><span class="kw">un_collatz</span>(<span class="dv">7</span>)</a></code></pre></div>
+<pre><code>## [1] 22</code></pre>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb173-1" title="1"><span class="kw">un_collatz</span>(<span class="dv">32</span>)</a></code></pre></div>
+<pre><code>## [1] 16</code></pre>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb175-1" title="1"><span class="kw">un_collatz</span>(<span class="dv">27</span>)</a></code></pre></div>
+<pre><code>## [1] 82</code></pre></li>
 <li><p>Escribir una función que dado un número natural calcula la secuencia generada por la función de Collatz hasta alcanzar el 1.</p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb117-1" title="1">sec_collatz &lt;-<span class="st"> </span><span class="cf">function</span>(n) {</a>
-<a class="sourceLine" id="cb117-2" title="2">  res &lt;-<span class="st"> </span><span class="kw">c</span>(n)</a>
-<a class="sourceLine" id="cb117-3" title="3">  <span class="cf">while</span> (n<span class="op">!=</span>COMPLETAR) {</a>
-<a class="sourceLine" id="cb117-4" title="4">    n &lt;-<span class="st"> </span>COMPLETAR</a>
-<a class="sourceLine" id="cb117-5" title="5">    res &lt;-<span class="st"> </span>COMPLETAR</a>
-<a class="sourceLine" id="cb117-6" title="6">  }</a>
-<a class="sourceLine" id="cb117-7" title="7">  <span class="kw">return</span>(res)</a>
-<a class="sourceLine" id="cb117-8" title="8">}</a></code></pre></div></li>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb177-1" title="1">sec_collatz &lt;-<span class="st"> </span><span class="cf">function</span>(n) {</a>
+<a class="sourceLine" id="cb177-2" title="2">  res &lt;-<span class="st"> </span><span class="kw">c</span>(n)</a>
+<a class="sourceLine" id="cb177-3" title="3">  <span class="cf">while</span> (n<span class="op">!=</span>COMPLETAR) {</a>
+<a class="sourceLine" id="cb177-4" title="4">    n &lt;-<span class="st"> </span>COMPLETAR</a>
+<a class="sourceLine" id="cb177-5" title="5">    res &lt;-<span class="st"> </span>COMPLETAR</a>
+<a class="sourceLine" id="cb177-6" title="6">  }</a>
+<a class="sourceLine" id="cb177-7" title="7">  <span class="kw">return</span>(res)</a>
+<a class="sourceLine" id="cb177-8" title="8">}</a></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb178-1" title="1">sec_collatz &lt;-<span class="st"> </span><span class="cf">function</span>(n) {</a>
+<a class="sourceLine" id="cb178-2" title="2">  res &lt;-<span class="st"> </span><span class="kw">c</span>(n)</a>
+<a class="sourceLine" id="cb178-3" title="3">  <span class="cf">while</span> (n<span class="op">!=</span><span class="dv">1</span>) {</a>
+<a class="sourceLine" id="cb178-4" title="4">    n &lt;-<span class="st"> </span><span class="kw">un_collatz</span>(n)</a>
+<a class="sourceLine" id="cb178-5" title="5">    res &lt;-<span class="st"> </span><span class="kw">c</span>(res, n)</a>
+<a class="sourceLine" id="cb178-6" title="6">  }</a>
+<a class="sourceLine" id="cb178-7" title="7">  <span class="kw">return</span>(res)</a>
+<a class="sourceLine" id="cb178-8" title="8">}</a>
+<a class="sourceLine" id="cb178-9" title="9"></a>
+<a class="sourceLine" id="cb178-10" title="10"><span class="kw">sec_collatz</span>(<span class="dv">7</span>)</a></code></pre></div>
+<pre><code>##  [1]  7 22 11 34 17 52 26 13 40 20 10  5 16  8  4  2  1</code></pre>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb180-1" title="1"><span class="kw">sec_collatz</span>(<span class="dv">32</span>)</a></code></pre></div>
+<pre><code>## [1] 32 16  8  4  2  1</code></pre>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb182-1" title="1"><span class="kw">sec_collatz</span>(<span class="dv">27</span>)</a></code></pre></div>
+<pre><code>##   [1]   27   82   41  124   62   31   94   47  142   71  214  107  322  161  484
+##  [16]  242  121  364  182   91  274  137  412  206  103  310  155  466  233  700
+##  [31]  350  175  526  263  790  395 1186  593 1780  890  445 1336  668  334  167
+##  [46]  502  251  754  377 1132  566  283  850  425 1276  638  319  958  479 1438
+##  [61]  719 2158 1079 3238 1619 4858 2429 7288 3644 1822  911 2734 1367 4102 2051
+##  [76] 6154 3077 9232 4616 2308 1154  577 1732  866  433 1300  650  325  976  488
+##  [91]  244  122   61  184   92   46   23   70   35  106   53  160   80   40   20
+## [106]   10    5   16    8    4    2    1</code></pre></li>
 <li><p>Escribir una función que dado un número <code>n</code> calcule (y devuelva) los primeros <code>n</code> términos de las siguientes sucesiones:</p>
 <ol style="list-style-type: lower-alpha">
-<li><p><span class="math inline">\(a_n = \displaystyle\frac{1}{\sqrt{n}}+\left(\frac{1}{2}\right)^n\)</span></p></li>
-<li><p><span class="math inline">\(d_n = (-1)^{n+5}\)</span></p></li>
+<li><p><span class="math inline">\(a_n = \displaystyle\frac{1}{\sqrt{n}}+\left(\frac{1}{2}\right)^n\)</span></p>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb184-1" title="1">func_a &lt;-<span class="st"> </span><span class="cf">function</span>(n) {</a>
+<a class="sourceLine" id="cb184-2" title="2">  a_n &lt;-<span class="st"> </span><span class="kw">c</span>()</a>
+<a class="sourceLine" id="cb184-3" title="3">  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>n) {</a>
+<a class="sourceLine" id="cb184-4" title="4">    nuevo_valor &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">/</span><span class="st"> </span><span class="kw">sqrt</span>(i) <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>)<span class="op">**</span>n</a>
+<a class="sourceLine" id="cb184-5" title="5">    a_n &lt;-<span class="st"> </span><span class="kw">c</span>(a_n,  nuevo_valor)</a>
+<a class="sourceLine" id="cb184-6" title="6">  }</a>
+<a class="sourceLine" id="cb184-7" title="7">  <span class="kw">return</span>(a_n)</a>
+<a class="sourceLine" id="cb184-8" title="8">}</a>
+<a class="sourceLine" id="cb184-9" title="9"></a>
+<a class="sourceLine" id="cb184-10" title="10"><span class="kw">func_a</span>(<span class="dv">2</span>)</a></code></pre></div>
+<pre><code>## [1] 1.2500000 0.9571068</code></pre>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb186-1" title="1"><span class="kw">func_a</span>(<span class="dv">20</span>)</a></code></pre></div>
+<pre><code>##  [1] 1.0000010 0.7071077 0.5773512 0.5000010 0.4472145 0.4082492 0.3779654
+##  [8] 0.3535543 0.3333343 0.3162287 0.3015123 0.2886761 0.2773511 0.2672622
+## [15] 0.2581998 0.2500010 0.2425366 0.2357032 0.2294167 0.2236078</code></pre></li>
+<li><p><span class="math inline">\(d_n = (-1)^{n+5}\)</span></p>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb188-1" title="1">func_d &lt;-<span class="st"> </span><span class="cf">function</span>(n) {</a>
+<a class="sourceLine" id="cb188-2" title="2">  d_n &lt;-<span class="st"> </span><span class="kw">c</span>()</a>
+<a class="sourceLine" id="cb188-3" title="3">  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>n) {</a>
+<a class="sourceLine" id="cb188-4" title="4">    nuevo_valor &lt;-<span class="st"> </span>(<span class="op">-</span><span class="dv">1</span>)<span class="op">**</span>(i<span class="op">+</span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb188-5" title="5">    d_n &lt;-<span class="st"> </span><span class="kw">c</span>(d_n,  nuevo_valor)</a>
+<a class="sourceLine" id="cb188-6" title="6">  }</a>
+<a class="sourceLine" id="cb188-7" title="7">  <span class="kw">return</span>(d_n)</a>
+<a class="sourceLine" id="cb188-8" title="8">}</a>
+<a class="sourceLine" id="cb188-9" title="9"></a>
+<a class="sourceLine" id="cb188-10" title="10"><span class="kw">func_d</span>(<span class="dv">2</span>)</a></code></pre></div>
+<pre><code>## [1]  1 -1</code></pre>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb190-1" title="1"><span class="kw">func_d</span>(<span class="dv">20</span>)</a></code></pre></div>
+<pre><code>##  [1]  1 -1  1 -1  1 -1  1 -1  1 -1  1 -1  1 -1  1 -1  1 -1  1 -1</code></pre></li>
 </ol></li>
 <li><p>Recordar <span class="math inline">\(\rho_k: \mathbb R \to \mathbb R\)</span>, definida de la siguiente manera
 <span class="math display">\[\begin{align*}
@@ -222,8 +441,67 @@ Deberá entregar todos los ejercicios en un archivo .R. Cada ejercicio debe esta
     \end{matrix} \right.
     \end{align*}\]</span></p>
 <p>Escribir una función que calcule la función <span class="math inline">\(\rho_k\)</span> tomando como parámetros <code>desde</code> y <code>hasta</code> para indicar el intervalo; <code>paso</code> para indicar cada cuanto se debe tomar un punto, y <code>k</code> que debe tener valor por defecto 5. Deberá poder usarse de la siguiente manera:</p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb118-1" title="1">  <span class="kw">rho_func</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="fl">0.1</span>)</a>
-<a class="sourceLine" id="cb118-2" title="2">  <span class="kw">rho_func</span>(<span class="op">-</span><span class="dv">5</span>, <span class="dv">2</span>, <span class="fl">0.03</span>, <span class="dv">8</span>)</a></code></pre></div></li>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb192-1" title="1">  <span class="kw">rho_func</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="fl">0.1</span>)</a>
+<a class="sourceLine" id="cb192-2" title="2">  <span class="kw">rho_func</span>(<span class="op">-</span><span class="dv">5</span>, <span class="dv">2</span>, <span class="fl">0.03</span>, <span class="dv">8</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb193-1" title="1">  rho_func &lt;-<span class="st"> </span><span class="cf">function</span>(desde, hasta, paso, <span class="dt">k=</span><span class="dv">5</span>) {</a>
+<a class="sourceLine" id="cb193-2" title="2">    valores &lt;-<span class="st"> </span><span class="kw">c</span>()</a>
+<a class="sourceLine" id="cb193-3" title="3"></a>
+<a class="sourceLine" id="cb193-4" title="4">    <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq</span>(desde, hasta, paso)){</a>
+<a class="sourceLine" id="cb193-5" title="5">      <span class="cf">if</span> (<span class="kw">abs</span>(i) <span class="op">&lt;=</span><span class="st"> </span>k) {</a>
+<a class="sourceLine" id="cb193-6" title="6">        nuevo_valor &lt;-<span class="st"> </span>i<span class="op">**</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb193-7" title="7">      } <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb193-8" title="8">        nuevo_valor &lt;-<span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>k <span class="op">*</span><span class="st"> </span><span class="kw">abs</span>(i) <span class="op">-</span><span class="st"> </span>k<span class="op">**</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb193-9" title="9">      }</a>
+<a class="sourceLine" id="cb193-10" title="10">      valores &lt;-<span class="st"> </span><span class="kw">c</span>(valores, nuevo_valor)</a>
+<a class="sourceLine" id="cb193-11" title="11">    }</a>
+<a class="sourceLine" id="cb193-12" title="12">    <span class="kw">return</span>(valores)</a>
+<a class="sourceLine" id="cb193-13" title="13">  }</a>
+<a class="sourceLine" id="cb193-14" title="14"></a>
+<a class="sourceLine" id="cb193-15" title="15">  <span class="kw">rho_func</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="fl">0.1</span>)</a></code></pre></div>
+<pre><code>##   [1] 75.00 74.00 73.00 72.00 71.00 70.00 69.00 68.00 67.00 66.00 65.00 64.00
+##  [13] 63.00 62.00 61.00 60.00 59.00 58.00 57.00 56.00 55.00 54.00 53.00 52.00
+##  [25] 51.00 50.00 49.00 48.00 47.00 46.00 45.00 44.00 43.00 42.00 41.00 40.00
+##  [37] 39.00 38.00 37.00 36.00 35.00 34.00 33.00 32.00 31.00 30.00 29.00 28.00
+##  [49] 27.00 26.00 25.00 24.01 23.04 22.09 21.16 20.25 19.36 18.49 17.64 16.81
+##  [61] 16.00 15.21 14.44 13.69 12.96 12.25 11.56 10.89 10.24  9.61  9.00  8.41
+##  [73]  7.84  7.29  6.76  6.25  5.76  5.29  4.84  4.41  4.00  3.61  3.24  2.89
+##  [85]  2.56  2.25  1.96  1.69  1.44  1.21  1.00  0.81  0.64  0.49  0.36  0.25
+##  [97]  0.16  0.09  0.04  0.01  0.00  0.01  0.04  0.09  0.16  0.25  0.36  0.49
+## [109]  0.64  0.81  1.00  1.21  1.44  1.69  1.96  2.25  2.56  2.89  3.24  3.61
+## [121]  4.00  4.41  4.84  5.29  5.76  6.25  6.76  7.29  7.84  8.41  9.00  9.61
+## [133] 10.24 10.89 11.56 12.25 12.96 13.69 14.44 15.21 16.00 16.81 17.64 18.49
+## [145] 19.36 20.25 21.16 22.09 23.04 24.01 25.00 26.00 27.00 28.00 29.00 30.00
+## [157] 31.00 32.00 33.00 34.00 35.00 36.00 37.00 38.00 39.00 40.00 41.00 42.00
+## [169] 43.00 44.00 45.00 46.00 47.00 48.00 49.00 50.00 51.00 52.00 53.00 54.00
+## [181] 55.00 56.00 57.00 58.00 59.00 60.00 61.00 62.00 63.00 64.00 65.00 66.00
+## [193] 67.00 68.00 69.00 70.00 71.00 72.00 73.00 74.00 75.00</code></pre>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb195-1" title="1">  <span class="kw">rho_func</span>(<span class="op">-</span><span class="dv">5</span>, <span class="dv">2</span>, <span class="fl">0.03</span>, <span class="dv">8</span>)</a></code></pre></div>
+<pre><code>##   [1] 25.0000 24.7009 24.4036 24.1081 23.8144 23.5225 23.2324 22.9441 22.6576
+##  [10] 22.3729 22.0900 21.8089 21.5296 21.2521 20.9764 20.7025 20.4304 20.1601
+##  [19] 19.8916 19.6249 19.3600 19.0969 18.8356 18.5761 18.3184 18.0625 17.8084
+##  [28] 17.5561 17.3056 17.0569 16.8100 16.5649 16.3216 16.0801 15.8404 15.6025
+##  [37] 15.3664 15.1321 14.8996 14.6689 14.4400 14.2129 13.9876 13.7641 13.5424
+##  [46] 13.3225 13.1044 12.8881 12.6736 12.4609 12.2500 12.0409 11.8336 11.6281
+##  [55] 11.4244 11.2225 11.0224 10.8241 10.6276 10.4329 10.2400 10.0489  9.8596
+##  [64]  9.6721  9.4864  9.3025  9.1204  8.9401  8.7616  8.5849  8.4100  8.2369
+##  [73]  8.0656  7.8961  7.7284  7.5625  7.3984  7.2361  7.0756  6.9169  6.7600
+##  [82]  6.6049  6.4516  6.3001  6.1504  6.0025  5.8564  5.7121  5.5696  5.4289
+##  [91]  5.2900  5.1529  5.0176  4.8841  4.7524  4.6225  4.4944  4.3681  4.2436
+## [100]  4.1209  4.0000  3.8809  3.7636  3.6481  3.5344  3.4225  3.3124  3.2041
+## [109]  3.0976  2.9929  2.8900  2.7889  2.6896  2.5921  2.4964  2.4025  2.3104
+## [118]  2.2201  2.1316  2.0449  1.9600  1.8769  1.7956  1.7161  1.6384  1.5625
+## [127]  1.4884  1.4161  1.3456  1.2769  1.2100  1.1449  1.0816  1.0201  0.9604
+## [136]  0.9025  0.8464  0.7921  0.7396  0.6889  0.6400  0.5929  0.5476  0.5041
+## [145]  0.4624  0.4225  0.3844  0.3481  0.3136  0.2809  0.2500  0.2209  0.1936
+## [154]  0.1681  0.1444  0.1225  0.1024  0.0841  0.0676  0.0529  0.0400  0.0289
+## [163]  0.0196  0.0121  0.0064  0.0025  0.0004  0.0001  0.0016  0.0049  0.0100
+## [172]  0.0169  0.0256  0.0361  0.0484  0.0625  0.0784  0.0961  0.1156  0.1369
+## [181]  0.1600  0.1849  0.2116  0.2401  0.2704  0.3025  0.3364  0.3721  0.4096
+## [190]  0.4489  0.4900  0.5329  0.5776  0.6241  0.6724  0.7225  0.7744  0.8281
+## [199]  0.8836  0.9409  1.0000  1.0609  1.1236  1.1881  1.2544  1.3225  1.3924
+## [208]  1.4641  1.5376  1.6129  1.6900  1.7689  1.8496  1.9321  2.0164  2.1025
+## [217]  2.1904  2.2801  2.3716  2.4649  2.5600  2.6569  2.7556  2.8561  2.9584
+## [226]  3.0625  3.1684  3.2761  3.3856  3.4969  3.6100  3.7249  3.8416  3.9601</code></pre></li>
 <li><p><strong>El polinomio interpolador de Lagrange</strong>.
 Dada una tabla de puntos <span class="math inline">\(\{(x_i,y_i)\}_{i=0,\ldots,n}\)</span>, con distintos valores para los <span class="math inline">\(x_i\)</span>, existe un único polinomio <span class="math inline">\(p_n(x)\)</span> de grado menos o igual a <span class="math inline">\(n\)</span> tal que <span class="math display">\[p_n(x_i)=y_i\;,\quad i=0,\ldots,n\;.\]</span></p>
 <p>Observacion: los puntos de la tabla estan indexados empezando en <span class="math inline">\(i=0\)</span>; es decir, hay <span class="math inline">\(n+1\)</span> puntos. Por ejemplo, si consideramos dos puntos, tenemos <span class="math inline">\((x_0,y_0)\)</span>, <span class="math inline">\((x_1,y_1)\)</span> y el polinomio interpolador resulta la recta que pasa por los dos puntos, recordando que la recta es un polinomio de grado <span class="math inline">\(n=1\)</span>.</p>
@@ -234,55 +512,103 @@ Dada una tabla de puntos <span class="math inline">\(\{(x_i,y_i)\}_{i=0,\ldots,n
 <li><p>¿Cuál es la gracia? Simple, <span class="math inline">\(l_i(x_i)=1\)</span> mientras que <span class="math inline">\(l_i(x_j)=0\)</span> si <span class="math inline">\(j \neq i\)</span>. Luego, el polonomio interpolador está definido por <span class="math display">\[p_n(x)=\sum_{i=0}^n y_i l_i(x)\;.\]</span></p></li>
 </ul>
 <p>Miramos los datos de co2 que ya vimos en el módulo de análisis:</p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb119-1" title="1">  fechas &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">1992</span>, <span class="dt">to=</span><span class="dv">2018</span>, <span class="dt">by=</span><span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb119-2" title="2">  co2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">356.3</span>, <span class="fl">358.6</span>, <span class="fl">362.4</span>, <span class="fl">366.5</span>, <span class="fl">369.4</span>, <span class="fl">373.2</span>, <span class="fl">377.5</span>, <span class="fl">381.9</span>,</a>
-<a class="sourceLine" id="cb119-3" title="3">           <span class="fl">385.6</span>, <span class="fl">389.9</span>, <span class="fl">393.9</span>, <span class="fl">398.6</span>, <span class="fl">404.2</span>, <span class="fl">408.5</span>)</a>
-<a class="sourceLine" id="cb119-4" title="4"></a>
-<a class="sourceLine" id="cb119-5" title="5">  <span class="kw">plot</span>(fechas, co2)</a></code></pre></div>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb197-1" title="1">  fechas &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">1992</span>, <span class="dt">to=</span><span class="dv">2018</span>, <span class="dt">by=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb197-2" title="2">  co2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">356.3</span>, <span class="fl">358.6</span>, <span class="fl">362.4</span>, <span class="fl">366.5</span>, <span class="fl">369.4</span>, <span class="fl">373.2</span>, <span class="fl">377.5</span>, <span class="fl">381.9</span>,</a>
+<a class="sourceLine" id="cb197-3" title="3">           <span class="fl">385.6</span>, <span class="fl">389.9</span>, <span class="fl">393.9</span>, <span class="fl">398.6</span>, <span class="fl">404.2</span>, <span class="fl">408.5</span>)</a>
+<a class="sourceLine" id="cb197-4" title="4"></a>
+<a class="sourceLine" id="cb197-5" title="5">  <span class="kw">plot</span>(fechas, co2)</a></code></pre></div>
 <p><img src="ModuloProgramacion-IC_files/figure-html/unnamed-chunk-94-1.png" width="672" /></p>
 <p>Definir:</p>
 <ol style="list-style-type: lower-alpha">
-<li><p>Las funciones <code>sumar_todos</code> y <code>multiplicar_todos</code> que toman un vector y devuelven la suma y el producto de todos los elementos respectivamente.</p></li>
+<li><p>Las funciones <code>sumar_todos</code> y <code>multiplicar_todos</code> que toman un vector y devuelven la suma y el producto de todos los elementos respectivamente.</p>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb198-1" title="1">sumar_todos &lt;-<span class="st"> </span><span class="cf">function</span>(vec) {</a>
+<a class="sourceLine" id="cb198-2" title="2">  suma &lt;-<span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb198-3" title="3">  <span class="cf">for</span>(i <span class="cf">in</span> vec) {</a>
+<a class="sourceLine" id="cb198-4" title="4">    suma &lt;-<span class="st"> </span>suma <span class="op">+</span><span class="st"> </span>i</a>
+<a class="sourceLine" id="cb198-5" title="5">  }</a>
+<a class="sourceLine" id="cb198-6" title="6">  <span class="kw">return</span>(suma)</a>
+<a class="sourceLine" id="cb198-7" title="7">}</a></code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb199-1" title="1">multiplicar_todos &lt;-<span class="st"> </span><span class="cf">function</span>(vec) {</a>
+<a class="sourceLine" id="cb199-2" title="2">  producto &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb199-3" title="3">  <span class="cf">for</span>(i <span class="cf">in</span> vec) {</a>
+<a class="sourceLine" id="cb199-4" title="4">    producto &lt;-<span class="st"> </span>producto <span class="op">*</span><span class="st"> </span>i</a>
+<a class="sourceLine" id="cb199-5" title="5">  }</a>
+<a class="sourceLine" id="cb199-6" title="6">  <span class="kw">return</span>(producto)</a>
+<a class="sourceLine" id="cb199-7" title="7">}</a></code></pre></div></li>
 <li><p>Completar la siguiente función para que realice la interpolación según la fórmula previa. Recordar que para excluir un elemento de un vector se puede poner: <code>vec[-posicion]</code>. Más abajo ejemplo de con resulados para probar.</p>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb120-1" title="1">interpolador &lt;-<span class="st"> </span><span class="cf">function</span>(x_nuevo, x_datos, y_datos) {</a>
-<a class="sourceLine" id="cb120-2" title="2">  n_puntos &lt;-<span class="st"> </span><span class="kw">length</span>(COMPLETAR)</a>
-<a class="sourceLine" id="cb120-3" title="3">  l &lt;-<span class="st"> </span><span class="kw">c</span>()</a>
-<a class="sourceLine" id="cb120-4" title="4"></a>
-<a class="sourceLine" id="cb120-5" title="5">  <span class="co"># Calculamos l_i(x)</span></a>
-<a class="sourceLine" id="cb120-6" title="6">  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>n_puntos) {</a>
-<a class="sourceLine" id="cb120-7" title="7">    numerador &lt;-<span class="st"> </span><span class="kw">multiplicar_todos</span>(COMPLETAR <span class="op">-</span><span class="st"> </span>x_datos[<span class="op">-</span>i])</a>
-<a class="sourceLine" id="cb120-8" title="8">    denominador &lt;-<span class="st"> </span><span class="kw">COMPLETAR</span>(x_datos[i] <span class="op">-</span><span class="st"> </span>COMPLETAR)</a>
-<a class="sourceLine" id="cb120-9" title="9">    nuevo_dato &lt;-<span class="st"> </span>numerador<span class="op">/</span>denominador</a>
-<a class="sourceLine" id="cb120-10" title="10">    l &lt;-<span class="st"> </span><span class="kw">c</span>(l, COMPLETAR)</a>
-<a class="sourceLine" id="cb120-11" title="11">  }</a>
-<a class="sourceLine" id="cb120-12" title="12"></a>
-<a class="sourceLine" id="cb120-13" title="13">  <span class="co"># Calculamos la sumatoria</span></a>
-<a class="sourceLine" id="cb120-14" title="14">  res &lt;-<span class="st"> </span><span class="kw">COMPLETAR</span>(y_datos <span class="op">*</span><span class="st"> </span>l)</a>
-<a class="sourceLine" id="cb120-15" title="15">  <span class="kw">return</span>(COMPLETAR)</a>
-<a class="sourceLine" id="cb120-16" title="16">}</a></code></pre></div>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb121-1" title="1"><span class="kw">interpolador</span>(<span class="dv">2</span>, <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>), <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">10</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb200-1" title="1">interpolador &lt;-<span class="st"> </span><span class="cf">function</span>(x_nuevo, x_datos, y_datos) {</a>
+<a class="sourceLine" id="cb200-2" title="2">  n_puntos &lt;-<span class="st"> </span><span class="kw">length</span>(COMPLETAR)</a>
+<a class="sourceLine" id="cb200-3" title="3">  l &lt;-<span class="st"> </span><span class="kw">c</span>()</a>
+<a class="sourceLine" id="cb200-4" title="4"></a>
+<a class="sourceLine" id="cb200-5" title="5">  <span class="co"># Calculamos l_i(x)</span></a>
+<a class="sourceLine" id="cb200-6" title="6">  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>n_puntos) {</a>
+<a class="sourceLine" id="cb200-7" title="7">    numerador &lt;-<span class="st"> </span><span class="kw">multiplicar_todos</span>(COMPLETAR <span class="op">-</span><span class="st"> </span>x_datos[<span class="op">-</span>i])</a>
+<a class="sourceLine" id="cb200-8" title="8">    denominador &lt;-<span class="st"> </span><span class="kw">COMPLETAR</span>(x_datos[i] <span class="op">-</span><span class="st"> </span>COMPLETAR)</a>
+<a class="sourceLine" id="cb200-9" title="9">    nuevo_dato &lt;-<span class="st"> </span>numerador<span class="op">/</span>denominador</a>
+<a class="sourceLine" id="cb200-10" title="10">    l &lt;-<span class="st"> </span><span class="kw">c</span>(l, COMPLETAR)</a>
+<a class="sourceLine" id="cb200-11" title="11">  }</a>
+<a class="sourceLine" id="cb200-12" title="12"></a>
+<a class="sourceLine" id="cb200-13" title="13">  <span class="co"># Calculamos la sumatoria</span></a>
+<a class="sourceLine" id="cb200-14" title="14">  res &lt;-<span class="st"> </span><span class="kw">COMPLETAR</span>(y_datos <span class="op">*</span><span class="st"> </span>l)</a>
+<a class="sourceLine" id="cb200-15" title="15">  <span class="kw">return</span>(COMPLETAR)</a>
+<a class="sourceLine" id="cb200-16" title="16">}</a></code></pre></div>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb201-1" title="1">interpolador &lt;-<span class="st"> </span><span class="cf">function</span>(x_nuevo, x_datos, y_datos) {</a>
+<a class="sourceLine" id="cb201-2" title="2">  n_puntos &lt;-<span class="st"> </span><span class="kw">length</span>(x_datos)</a>
+<a class="sourceLine" id="cb201-3" title="3">  l &lt;-<span class="st"> </span><span class="kw">c</span>()</a>
+<a class="sourceLine" id="cb201-4" title="4">  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>n_puntos) {</a>
+<a class="sourceLine" id="cb201-5" title="5">    numerador &lt;-<span class="st"> </span><span class="kw">multiplicar_todos</span>(x_nuevo<span class="op">-</span>x_datos[<span class="op">-</span>i])</a>
+<a class="sourceLine" id="cb201-6" title="6">    denominador &lt;-<span class="st"> </span><span class="kw">multiplicar_todos</span>(x_datos[i]<span class="op">-</span>x_datos[<span class="op">-</span>i])</a>
+<a class="sourceLine" id="cb201-7" title="7">    nuevo_dato &lt;-<span class="st"> </span>numerador<span class="op">/</span>denominador</a>
+<a class="sourceLine" id="cb201-8" title="8">    l &lt;-<span class="st"> </span><span class="kw">c</span>(l, nuevo_dato)</a>
+<a class="sourceLine" id="cb201-9" title="9">  }</a>
+<a class="sourceLine" id="cb201-10" title="10">  res &lt;-<span class="st"> </span><span class="kw">sumar_todos</span>(y_datos <span class="op">*</span><span class="st"> </span>l)</a>
+<a class="sourceLine" id="cb201-11" title="11">  <span class="kw">return</span>(res)</a>
+<a class="sourceLine" id="cb201-12" title="12">}</a></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb202-1" title="1"><span class="kw">interpolador</span>(<span class="dv">2</span>, <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>), <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">10</span>))</a></code></pre></div>
 <pre><code>## [1] 4</code></pre>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb123-1" title="1"><span class="kw">interpolador</span>(<span class="dv">4</span>, <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>), <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">10</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb204-1" title="1"><span class="kw">interpolador</span>(<span class="dv">4</span>, <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>), <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">10</span>))</a></code></pre></div>
 <pre><code>## [1] 8</code></pre>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb125-1" title="1"><span class="kw">interpolador</span>(<span class="fl">4.25</span>, <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>), <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">10</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb206-1" title="1"><span class="kw">interpolador</span>(<span class="fl">4.25</span>, <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>), <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">10</span>))</a></code></pre></div>
 <pre><code>## [1] 8.5</code></pre></li>
 <li><p>Completar el siguiente código para poder interpolar sobre un vector de puntos, probarla graficando los puntos interpolados y una recta con los puntos originales.</p>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb127-1" title="1">interpolar_grilla &lt;-<span class="st"> </span><span class="cf">function</span>(datos_nuevos, x_datos, y_datos) {</a>
-<a class="sourceLine" id="cb127-2" title="2"> res &lt;-<span class="st"> </span><span class="kw">c</span>()</a>
-<a class="sourceLine" id="cb127-3" title="3">  <span class="cf">for</span> (d <span class="cf">in</span> datos_nuevos){</a>
-<a class="sourceLine" id="cb127-4" title="4">    nuevo &lt;-<span class="st"> </span><span class="kw">interpolador</span>(COMPLETAR)</a>
-<a class="sourceLine" id="cb127-5" title="5">    res &lt;-<span class="st"> </span>COMPLETAR</a>
-<a class="sourceLine" id="cb127-6" title="6">  }</a>
-<a class="sourceLine" id="cb127-7" title="7"> <span class="kw">return</span>(res)</a>
-<a class="sourceLine" id="cb127-8" title="8">}</a>
-<a class="sourceLine" id="cb127-9" title="9"></a>
-<a class="sourceLine" id="cb127-10" title="10"><span class="co"># hago una grilla con puntos intermedios</span></a>
-<a class="sourceLine" id="cb127-11" title="11">grilla &lt;-<span class="st"> </span><span class="kw">seq</span>(fechas[<span class="dv">1</span>], fechas[<span class="kw">length</span>(fechas)], <span class="fl">0.01</span>)</a>
-<a class="sourceLine" id="cb127-12" title="12">valores_grilla &lt;-<span class="st"> </span><span class="kw">interpolar_grilla</span>(grilla, fechas, co2)</a></code></pre></div></li>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb208-1" title="1">interpolar_grilla &lt;-<span class="st"> </span><span class="cf">function</span>(datos_nuevos, x_datos, y_datos) {</a>
+<a class="sourceLine" id="cb208-2" title="2"> res &lt;-<span class="st"> </span><span class="kw">c</span>()</a>
+<a class="sourceLine" id="cb208-3" title="3">  <span class="cf">for</span> (d <span class="cf">in</span> datos_nuevos){</a>
+<a class="sourceLine" id="cb208-4" title="4">    nuevo &lt;-<span class="st"> </span><span class="kw">interpolador</span>(COMPLETAR)</a>
+<a class="sourceLine" id="cb208-5" title="5">    res &lt;-<span class="st"> </span>COMPLETAR</a>
+<a class="sourceLine" id="cb208-6" title="6">  }</a>
+<a class="sourceLine" id="cb208-7" title="7"> <span class="kw">return</span>(res)</a>
+<a class="sourceLine" id="cb208-8" title="8">}</a>
+<a class="sourceLine" id="cb208-9" title="9"></a>
+<a class="sourceLine" id="cb208-10" title="10"><span class="co"># hago una grilla con puntos intermedios</span></a>
+<a class="sourceLine" id="cb208-11" title="11">grilla &lt;-<span class="st"> </span><span class="kw">seq</span>(fechas[<span class="dv">1</span>], fechas[<span class="kw">length</span>(fechas)], <span class="fl">0.01</span>)</a>
+<a class="sourceLine" id="cb208-12" title="12">valores_grilla &lt;-<span class="st"> </span><span class="kw">interpolar_grilla</span>(grilla, fechas, co2)</a></code></pre></div>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb209-1" title="1">interpolar_grilla &lt;-<span class="st"> </span><span class="cf">function</span>(datos_nuevos, x_datos, y_datos) {</a>
+<a class="sourceLine" id="cb209-2" title="2"> res &lt;-<span class="st"> </span><span class="kw">c</span>()</a>
+<a class="sourceLine" id="cb209-3" title="3">  <span class="cf">for</span> (d <span class="cf">in</span> datos_nuevos){</a>
+<a class="sourceLine" id="cb209-4" title="4">    nuevo &lt;-<span class="st"> </span><span class="kw">interpolador</span>(d, x_datos, y_datos)</a>
+<a class="sourceLine" id="cb209-5" title="5">    res &lt;-<span class="st"> </span><span class="kw">c</span>(res, nuevo)</a>
+<a class="sourceLine" id="cb209-6" title="6">  }</a>
+<a class="sourceLine" id="cb209-7" title="7"> <span class="kw">return</span>(res)</a>
+<a class="sourceLine" id="cb209-8" title="8">}</a>
+<a class="sourceLine" id="cb209-9" title="9"></a>
+<a class="sourceLine" id="cb209-10" title="10">grilla &lt;-<span class="st"> </span><span class="kw">seq</span>(fechas[<span class="dv">1</span>], fechas[<span class="kw">length</span>(fechas)], <span class="fl">0.01</span>)</a>
+<a class="sourceLine" id="cb209-11" title="11">valores_grilla &lt;-<span class="st"> </span><span class="kw">interpolar_grilla</span>(grilla, fechas, co2)</a>
+<a class="sourceLine" id="cb209-12" title="12"></a>
+<a class="sourceLine" id="cb209-13" title="13"><span class="kw">plot</span>(grilla, valores_grilla)</a>
+<a class="sourceLine" id="cb209-14" title="14"><span class="kw">lines</span>(fechas, co2, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a></code></pre></div>
+<p><img src="ModuloProgramacion-IC_files/figure-html/unnamed-chunk-102-1.png" width="672" /></p></li>
 <li><p>Agregar una recta interpolando únicamente por el primer y último punto de los datos y agregarla al gráfico anterior con otro color</p>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb128-1" title="1">grilla &lt;-<span class="st"> </span><span class="kw">seq</span>(fechas[<span class="dv">1</span>], fechas[<span class="kw">length</span>(fechas)], <span class="fl">0.01</span>)</a>
-<a class="sourceLine" id="cb128-2" title="2">valores_grilla_nueva &lt;-<span class="st"> </span><span class="kw">interpolar_grilla</span>(COMPLETAR,</a>
-<a class="sourceLine" id="cb128-3" title="3">                          fechas[<span class="kw">c</span>(<span class="dv">1</span>,<span class="kw">length</span>(fechas))], co2[COMPLETAR])</a></code></pre></div></li>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb210-1" title="1">grilla &lt;-<span class="st"> </span><span class="kw">seq</span>(fechas[<span class="dv">1</span>], fechas[<span class="kw">length</span>(fechas)], <span class="fl">0.01</span>)</a>
+<a class="sourceLine" id="cb210-2" title="2">valores_grilla_nueva &lt;-<span class="st"> </span><span class="kw">interpolar_grilla</span>(COMPLETAR,</a>
+<a class="sourceLine" id="cb210-3" title="3">                          fechas[<span class="kw">c</span>(<span class="dv">1</span>,<span class="kw">length</span>(fechas))], co2[COMPLETAR])</a></code></pre></div>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb211-1" title="1">grilla &lt;-<span class="st"> </span><span class="kw">seq</span>(fechas[<span class="dv">1</span>], fechas[<span class="kw">length</span>(fechas)], <span class="fl">0.01</span>)</a>
+<a class="sourceLine" id="cb211-2" title="2">valores_grilla_nueva &lt;-<span class="st"> </span><span class="kw">interpolar_grilla</span>(grilla, fechas[<span class="kw">c</span>(<span class="dv">1</span>,<span class="kw">length</span>(fechas))], co2[<span class="kw">c</span>(<span class="dv">1</span>,<span class="kw">length</span>(co2))])</a>
+<a class="sourceLine" id="cb211-3" title="3"></a>
+<a class="sourceLine" id="cb211-4" title="4"><span class="kw">plot</span>(grilla, valores_grilla)</a>
+<a class="sourceLine" id="cb211-5" title="5"><span class="kw">lines</span>(fechas, co2, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a>
+<a class="sourceLine" id="cb211-6" title="6"><span class="kw">lines</span>(grilla, valores_grilla_nueva, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</a></code></pre></div>
+<p><img src="ModuloProgramacion-IC_files/figure-html/unnamed-chunk-104-1.png" width="672" /></p></li>
 </ol></li>
 <li><p>Para cada uno de los conjuntos de datos dados, calcular y grafocar el polinomio <span class="math inline">\(p(x)\)</span> interpolador de grado menor o igual que 3 .</p>
 <ol style="list-style-type: lower-alpha">
@@ -386,7 +712,7 @@ y
 <div id="parte-b-dataframes" class="section level2">
 <h2><span class="header-section-number">3.2</span> Parte B: DataFrames</h2>
 <p>Vamos a trabajar con la base de datos <em>Iris</em>. Esta es una base de datos muy conocida y utilizada en cursos introductorios. Para más información <a href="https://en.wikipedia.org/wiki/Iris_flower_data_set">mirá acá</a>. Por defecto, la base de datos <em>Iris</em> viene con la instalación de R. Si queres ver como se ve hace:</p>
-<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb129-1" title="1"><span class="kw">head</span>(iris)</a></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb212-1" title="1"><span class="kw">head</span>(iris)</a></code></pre></div>
 <pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 ## 1          5.1         3.5          1.4         0.2  setosa
 ## 2          4.9         3.0          1.4         0.2  setosa
@@ -396,16 +722,34 @@ y
 ## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
 <ol style="list-style-type: decimal">
 <li><p>Describir a la base de datos. ¿Cuantas filas tiene?. ¿Y columnas?. ¿Cuantas variables tiene?</p></li>
-<li><p>Seleccionar las filas que pertenezcan a la especie <em>versicolor</em>.¿Cuantos individuos fueron seleccionados?.</p></li>
-<li><p>Seleccionar solo la columna <em>Petal.Length</em>.¿Cual es la media de la longitud de los petalos?.</p></li>
-<li><p>Si suponemos que el area del pétalo se puede estimar como (largo * ancho * <span class="math inline">\(\pi\)</span>), ¿Cuanto es el área promedio del pétalo de la especie <em>setosa</em>?.</p></li>
-<li><p>Calcular la frecuencia de individuos de la especie <em>virginica</em> que poseen un <code>Sepal.Width</code> mayor a 3.</p></li>
-<li><p>Calcular la frecuencia de individuos de la especie <em>setosa</em> que poseen un <code>Sepal.Length</code> mayor a 5 y un <code>Petal.Width</code> menor a 0.3.</p></li>
-<li><p>Ahora agregale una columna al <code>df</code> que sea la suma de los cuatro atributos para cada individuo.</p></li>
+<li><p>Seleccionar las filas que pertenezcan a la especie <em>versicolor</em>.¿Cuantos individuos fueron seleccionados?.</p>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb214-1" title="1"><span class="kw">nrow</span>(iris[iris<span class="op">$</span>Species<span class="op">==</span><span class="st">&quot;versicolor&quot;</span>,])</a></code></pre></div>
+<pre><code>## [1] 50</code></pre></li>
+<li><p>Seleccionar solo la columna <em>Petal.Length</em>.¿Cual es la media de la longitud de los petalos?.</p>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb216-1" title="1"><span class="kw">mean</span>(iris<span class="op">$</span>Petal.Length)</a></code></pre></div>
+<pre><code>## [1] 3.758</code></pre></li>
+<li><p>Si suponemos que el area del pétalo se puede estimar como (largo * ancho * <span class="math inline">\(\pi\)</span>), ¿Cuanto es el área promedio del pétalo de la especie <em>setosa</em>?.</p>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb218-1" title="1"><span class="kw">mean</span>(iris[iris<span class="op">$</span>Species<span class="op">==</span><span class="st">&quot;setosa&quot;</span>,<span class="dv">3</span>]<span class="op">*</span>iris[iris<span class="op">$</span>Species<span class="op">==</span><span class="st">&quot;setosa&quot;</span>,<span class="dv">4</span>]<span class="op">*</span>pi)</a></code></pre></div>
+<pre><code>## [1] 1.148566</code></pre></li>
+<li><p>Calcular la frecuencia de individuos de la especie <em>virginica</em> que poseen un <code>Sepal.Width</code> mayor a 3.</p>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb220-1" title="1"><span class="kw">nrow</span>(iris[iris<span class="op">$</span>Species<span class="op">==</span><span class="st">&quot;virginica&quot;</span> <span class="op">&amp;</span><span class="st"> </span>iris<span class="op">$</span>Sepal.Width<span class="op">&gt;</span><span class="dv">3</span>,])</a></code></pre></div>
+<pre><code>## [1] 17</code></pre></li>
+<li><p>Calcular la frecuencia de individuos de la especie <em>setosa</em> que poseen un <code>Sepal.Length</code> mayor a 5 y un <code>Petal.Width</code> menor a 0.3.</p>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb222-1" title="1"><span class="kw">nrow</span>(iris[iris<span class="op">$</span>Species<span class="op">==</span><span class="st">&quot;setosa&quot;</span> <span class="op">&amp;</span><span class="st"> </span>iris<span class="op">$</span>Sepal.Length<span class="op">&gt;</span><span class="dv">5</span> <span class="op">&amp;</span><span class="st"> </span>iris<span class="op">$</span>Petal.Width<span class="op">&lt;</span><span class="fl">0.3</span>,])</a></code></pre></div>
+<pre><code>## [1] 12</code></pre></li>
+<li><p>Ahora agregale una columna al <code>df</code> que sea la suma de los cuatro atributos para cada individuo.</p>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb224-1" title="1">iris<span class="op">$</span>suma &lt;-<span class="st"> </span>iris[,<span class="dv">1</span>]<span class="op">+</span>iris[,<span class="dv">2</span>]<span class="op">+</span>iris[,<span class="dv">3</span>]<span class="op">+</span>iris[,<span class="dv">4</span>]</a></code></pre></div></li>
 <li><p>Asociación entre rasgos paternos y tamaño de la bola de cría en el escarabajo estercolero <em>Sulcophanaeus</em> sp.</p>
 <p>Los rasgos de los padres suelen afectar el desarrollo de rasgos de su cría. Un mecanismo por el cual los padres pueden influir en el fenotipo de la descendencia es a través del nivel de cuidado que proporcionan. <em>Sulcophanaeus</em> sp (Coleoptera, Scarabaeidae) es un escarabajo estercolero con cuidados biparentales. El macho construye una bola de cría formada por estiércol, en la que la hembra deposita un huevo, que al eclosionar se alimenta de esa masa. Se sabe que cuanto mayor es el tamaño de la bola de cría, mayor es la disponibilidad de alimento y mayor el desarrollo de la cría, pero se desconocen los factores que regulan el tamaño de las bolas de cría. Los machos presentan además variaciones en el tamaño de sus cuernos, que utilizan durante las peleas por las hembras permitiendoles incrementar su éxito reproductivo. Se desea probar la hipótesis de que ambas características morfológicas de los machos (tamaño corporal y la longitud de los cuernos) afectan en forma sinérgica el tamaño de las bolas de cría. Para demostrarlo se capturaron ejemplares adultos en la provincia de Buenos Aires y se les midió el largo corporal total (LT) y del cuerno (LC), ambos en mm. Se seleccionaron machos de manera de cubrir el rango de combinaciones de tamaños y se los cruzó con una hembra de tamaño promedio. Cada pareja fue mantenida en una cámara de cría individual con estiércol de vaca. Se obtuvieron 75 bolas de cría, a las que se les determinó el peso seco (PS), en gramos. Los resultados se encuentran en el archivo <a href="escarab.csv">escarab.csv (click para descargar)</a></p>
-<p>Lea el archivo de datos y calcule los valores medios para cada una de las mediciones <code>LT</code>, <code>LC</code> y <code>PS</code>.</p></li>
-<li><p>Hacer una función que dada una <em>variable de interés</em> devuelva la especie que posea la mayor media para ese atributo.</p></li>
+<p>Lea el archivo de datos y calcule los valores medios para cada una de las mediciones <code>LT</code>, <code>LC</code> y <code>PS</code>.</p>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb225-1" title="1">escarab &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;escarab.csv&quot;</span>,<span class="dt">header=</span>T)</a></code></pre></div></li>
+<li><p>Hacer una función que dada una <em>variable de interés</em> devuelva la especie que posea la mayor media para ese atributo.</p>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb226-1" title="1"><span class="kw">mean</span>(escarab<span class="op">$</span>LT)</a></code></pre></div>
+<pre><code>## [1] 16.95747</code></pre>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb228-1" title="1"><span class="kw">mean</span>(escarab<span class="op">$</span>LC)</a></code></pre></div>
+<pre><code>## [1] 9.528867</code></pre>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb230-1" title="1"><span class="kw">mean</span>(escarab<span class="op">$</span>PS)</a></code></pre></div>
+<pre><code>## [1] 5.668827</code></pre></li>
 <li><p>Ahora hacer una función que dada una <em>variable de interés</em> devuelva la especie que posea la menor varianza para ese atributo.</p></li>
 </ol>
 <div id="análisis-exploratorio-a-partir-del-manejo-de-salidas-gráficas" class="section level3">
@@ -417,18 +761,18 @@ Hay diferentes formas de crear dispositivos donde realizar gráficos, por ejempl
 <p>Para generar distintos sub-gráficos en una misma figura pueden usarse los parámetros <em>mfrow</em> o <em>mfcol</em> de la función <em>par()</em>.</p>
 <ol style="list-style-type: decimal">
 <li><p>Realizar los siguientes gráficos y analizá qué significan los parámetros <em>main</em>, <em>xlab</em>, <em>ylab</em>, <em>pch</em> y <em>col</em>.</p>
-<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb131-1" title="1"><span class="kw">plot</span>(iris<span class="op">$</span>Sepal.Length, iris<span class="op">$</span>Sepal.Width, <span class="dt">col=</span>iris<span class="op">$</span>Species)</a></code></pre></div>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb132-1" title="1"><span class="kw">pairs</span>(iris[,<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>], <span class="dt">pch=</span><span class="kw">as.numeric</span>(iris<span class="op">$</span>Species))</a></code></pre></div>
-<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb133-1" title="1"><span class="kw">hist</span>(iris<span class="op">$</span>Sepal.Length, <span class="dt">ylab=</span><span class="st">&quot;Frecuencia&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Longitud del Sépalo&quot;</span>)</a></code></pre></div>
-<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb134-1" title="1"><span class="kw">plot</span>(iris<span class="op">$</span>Sepal.Length<span class="op">~</span>iris<span class="op">$</span>Species, <span class="dt">main=</span><span class="st">&quot;Longitud del sepalo por especie&quot;</span>)</a></code></pre></div>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb135-1" title="1"><span class="kw">barplot</span>(<span class="kw">tapply</span>(iris<span class="op">$</span>Sepal.Length,iris<span class="op">$</span>Species,mean), <span class="dt">main=</span><span class="st">&quot;Longitud del sepalo por especie&quot;</span>)</a></code></pre></div></li>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb232-1" title="1"><span class="kw">plot</span>(iris<span class="op">$</span>Sepal.Length, iris<span class="op">$</span>Sepal.Width, <span class="dt">col=</span>iris<span class="op">$</span>Species)</a></code></pre></div>
+<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb233-1" title="1"><span class="kw">pairs</span>(iris[,<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>], <span class="dt">pch=</span><span class="kw">as.numeric</span>(iris<span class="op">$</span>Species))</a></code></pre></div>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb234-1" title="1"><span class="kw">hist</span>(iris<span class="op">$</span>Sepal.Length, <span class="dt">ylab=</span><span class="st">&quot;Frecuencia&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Longitud del Sépalo&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb235-1" title="1"><span class="kw">plot</span>(iris<span class="op">$</span>Sepal.Length<span class="op">~</span>iris<span class="op">$</span>Species, <span class="dt">main=</span><span class="st">&quot;Longitud del sepalo por especie&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb236-1" title="1"><span class="kw">barplot</span>(<span class="kw">tapply</span>(iris<span class="op">$</span>Sepal.Length,iris<span class="op">$</span>Species,mean), <span class="dt">main=</span><span class="st">&quot;Longitud del sepalo por especie&quot;</span>)</a></code></pre></div></li>
 </ol>
 </div>
 <div id="gráficos-básicos-probando-modificar-parámetros" class="section level3">
 <h3><span class="header-section-number">3.2.2</span> Gráficos básicos: Probando modificar parámetros</h3>
 <ol style="list-style-type: decimal">
 <li><p>Modificar el número de divisiones en el histograma utilizando el parámetro <em>breaks</em>. Una vez hecho esto, ingresar:</p>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb136-1" title="1"><span class="kw">plot</span>(<span class="kw">density</span>(iris<span class="op">$</span>Sepal.Length), <span class="dt">main=</span><span class="st">&quot;Densidad de LongSepalo&quot;</span>)</a></code></pre></div></li>
+<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb237-1" title="1"><span class="kw">plot</span>(<span class="kw">density</span>(iris<span class="op">$</span>Sepal.Length), <span class="dt">main=</span><span class="st">&quot;Densidad de LongSepalo&quot;</span>)</a></code></pre></div></li>
 <li><p>Hacer en una ventana aparte un gráfico subdividido en cuatro donde se muestre el histograma de cada una de las variables medidas.</p></li>
 <li><p>Hacer un gráfico adecuado para las 4 variables registradas en las 150 flores. Analizar qué se está representando e investigar la presencia de datos atípicos en los datos.</p></li>
 <li><p>Hacer un boxplot para cada variable pero discriminando por especie.</p></li>
@@ -445,8 +789,8 @@ Hay diferentes formas de crear dispositivos donde realizar gráficos, por ejempl
           </div>
         </div>
       </div>
-<a href="clase02.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="clase02.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="clase04.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

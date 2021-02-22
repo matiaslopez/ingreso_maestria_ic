@@ -143,6 +143,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2.2" data-path="clase03.html"><a href="clase03.html#gráficos-básicos-probando-modificar-parámetros"><i class="fa fa-check"></i><b>3.2.2</b> Gráficos básicos: Probando modificar parámetros</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="clase04.html"><a href="clase04.html"><i class="fa fa-check"></i><b>4</b> Modelado: Álbum de figuritas</a><ul>
+<li class="chapter" data-level="4.1" data-path="clase04.html"><a href="clase04.html#algunas-herramientas-útiles-de-r"><i class="fa fa-check"></i><b>4.1</b> Algunas herramientas útiles de R</a></li>
+<li class="chapter" data-level="4.2" data-path="clase04.html"><a href="clase04.html#el-álbum-de-figuritas"><i class="fa fa-check"></i><b>4.2</b> El álbum de figuritas</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="clase04.html"><a href="clase04.html#datos"><i class="fa fa-check"></i><b>4.2.1</b> Datos</a></li>
+<li class="chapter" data-level="4.2.2" data-path="clase04.html"><a href="clase04.html#primer-modelo-las-figuritas-se-compran-de-a-una"><i class="fa fa-check"></i><b>4.2.2</b> Primer modelo: Las figuritas se compran de a una</a></li>
+<li class="chapter" data-level="4.2.3" data-path="clase04.html"><a href="clase04.html#segundo-modelo-las-figuritas-se-compran-por-paquetes"><i class="fa fa-check"></i><b>4.2.3</b> Segundo modelo: Las figuritas se compran por paquetes</a></li>
+</ul></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -465,12 +473,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb100-2" title="2">a_n &lt;-<span class="st"> </span><span class="kw">c</span>()</a>
 <a class="sourceLine" id="cb100-3" title="3"></a>
 <a class="sourceLine" id="cb100-4" title="4"><span class="cf">for</span> (i <span class="cf">in</span> valores_n) {</a>
-<a class="sourceLine" id="cb100-5" title="5">  nuevo_valor &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">/</span><span class="st"> </span><span class="kw">sqrt</span>(i) <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>)<span class="op">**</span>n</a>
+<a class="sourceLine" id="cb100-5" title="5">  nuevo_valor &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">/</span><span class="st"> </span><span class="kw">sqrt</span>(i) <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>)<span class="op">**</span>i</a>
 <a class="sourceLine" id="cb100-6" title="6">  a_n &lt;-<span class="st"> </span><span class="kw">c</span>(a_n,  nuevo_valor)</a>
 <a class="sourceLine" id="cb100-7" title="7">}</a>
 <a class="sourceLine" id="cb100-8" title="8">a_n</a></code></pre></div>
-<pre><code>##  [1] 1.0000010 0.7071077 0.5773512 0.5000010 0.4472145 0.4082492 0.3779654
-##  [8] 0.3535543 0.3333343 0.3162287</code></pre>
+<pre><code>##  [1] 1.5000000 0.9571068 0.7023503 0.5625000 0.4784636 0.4238733 0.3857770
+##  [8] 0.3574596 0.3352865 0.3172043</code></pre>
 <div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb102-1" title="1"><span class="kw">plot</span>(valores_n, a_n)</a></code></pre></div>
 <p><img src="ModuloProgramacion-IC_files/figure-html/unnamed-chunk-63-1.png" width="672" /></p></li>
 <li><p><span class="math inline">\(d_n = (-1)^{n+5}\)</span></p>

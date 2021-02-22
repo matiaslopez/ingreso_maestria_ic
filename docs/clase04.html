@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Curso de Ingreso - Módulo Programación</title>
-  <meta name="description" content="Curso de Ingreso - Módulo Programación" />
+  <title>Clase 4 Modelado: Álbum de figuritas | Curso de Ingreso - Módulo Programación</title>
+  <meta name="description" content="Clase 4 Modelado: Álbum de figuritas | Curso de Ingreso - Módulo Programación" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Curso de Ingreso - Módulo Programación" />
+  <meta property="og:title" content="Clase 4 Modelado: Álbum de figuritas | Curso de Ingreso - Módulo Programación" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Curso de Ingreso - Módulo Programación" />
+  <meta name="twitter:title" content="Clase 4 Modelado: Álbum de figuritas | Curso de Ingreso - Módulo Programación" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="clase03.html"/>
 
-<link rel="next" href="clase01.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -168,36 +168,89 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Curso de Ingreso - Módulo Programación</h1>
+<div id="clase04" class="section level1">
+<h1><span class="header-section-number">Clase 4</span> Modelado: Álbum de figuritas</h1>
+<p>Esta es la guía de ejercicios correspondiente a la clase 04.
+Deberá entregar todos los ejercicios en un archivo .R. Cada ejercicio debe estar resuelto entre comentarios que indique secciones dentro del archivo.</p>
+<p>Además de escribir los programas pedidos deberán probarlos y dejar constancia de las pruebas realizadas, además de explicitar si anduvo como era esperado o no.</p>
+<div id="algunas-herramientas-útiles-de-r" class="section level2">
+<h2><span class="header-section-number">4.1</span> Algunas herramientas útiles de R</h2>
+<p>Para la presente actividad tenga presente los siguientes comandos:</p>
+<ul>
+<li><code>sample(x, size, replace=FALSE)</code></li>
+<li><p><code>sample(x, size, replace=TRUE)</code></p></li>
+<li><code>seq(from =, to =  by = )</code></li>
+<li><code>rep (x =, times = )</code></li>
+<li><code>sum(x)</code></li>
+<li><p><code>mean(x)</code></p></li>
+</ul>
+<p>Explorarlos y revisar su documentación antes de empezar.</p>
 </div>
-<div id="guía-de-ejercicios" class="section level1 unnumbered">
-<h1>Guía de ejercicios</h1>
+<div id="el-álbum-de-figuritas" class="section level2">
+<h2><span class="header-section-number">4.2</span> El álbum de figuritas</h2>
+<p>El llenado de un álbum de figuritas es un fenómeno mundial de larga data que ha dejado recuerdos en mucha gente:</p>
+<blockquote>
+<p><em>(…) A todos los que ahorraron el dinero de su bolsillo
+para completar el álbum Panini de México 86 con su figurita (…)</em></p>
+<p>Emmanuel Macron (Presidente de Francia) ante la muerte de Diego Armando Maradona. <a href="https://www.elysee.fr/emmanuel-macron/2020/11/25/deces-de-diego-maradona">Ver nota</a></p>
+</blockquote>
+<p>También ha sido abordado desde las matemáticas:</p>
+<blockquote>
+<p><em>Las figuritas del mundial: ¿cuántas figuritas hay
+que comprar para completar el álbum del Mundial?</em></p>
+<p>Adrián Paenza; Página 12 - Contratapa 06/07/2014 <a href="https://www.pagina12.com.ar/diario/contratapa/13-250187-2014-07-06.html">Ver nota</a></p>
+</blockquote>
+<div id="datos" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> Datos</h3>
+<p>Para este problema utilizaremos los siguientes datos:</p>
+<ul>
+<li>Álbum con 640 figuritas.</li>
+<li>Cada figurita se imprime en cantidades iguales y se distribuye aleatoriamente.</li>
+<li>Cada paquete trae cinco figuritas.</li>
+</ul>
+<p>Los usaremos considerando distintos escenarios simplificados hasta alcanzar el modelo completo.</p>
+</div>
+<div id="primer-modelo-las-figuritas-se-compran-de-a-una" class="section level3">
+<h3><span class="header-section-number">4.2.2</span> Primer modelo: Las figuritas se compran de a una</h3>
 <ol style="list-style-type: decimal">
-<li><p><a href="clase01.html#clase01">Conceptos básicos de los programas imperativos</a></p></li>
-<li><p><a href="clase02.html#clase02">Estructuras de control - Gráficos</a></p></li>
-<li><p><a href="clase03.html#clase03">Funciones - DataFrames</a></p></li>
-<li><p><a href="clase04.html#clase04">Modelado: Álbum de figuritas</a></p></li>
+<li><p>Simular el número de una figurita elegida al azar si el álbum es de 6 figuritas. ¿Qué comando sirve?</p></li>
+<li><p>Simular el llenado de un álbum de 6 figuritas e indicar cuántas figuritas se debieron comprar para completarlo.</p></li>
+<li><p>Implementar la función <code>cuantas_figus(figus_total)</code> que, dado el tamaño del álbum (<code>figus_total</code>), simule su llenado y devuelva la cantidad de figuritas que se debieron adquirir para completarlo.</p></li>
+<li><p>Calcular <code>n_rep=1000</code> veces la función anterior utilizando <code>figusTotal=6</code> y guardar los resultados obtenidos en cada repetición en un vector. Con los resultados obtenidos para un álbum de seis figuritas, estimar:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>El número de figuritas hay que comprar, en promedio, para completar el álbum.</p></li>
+<li><p>La probabilidad de completar el álbum comprando 16 figuritas.</p></li>
+<li><p>El número de figuritas que hay que comprar para tener probabilidad del 90% de completar el álbum.</p></li>
 </ol>
-<!-- 1. Variables, vectores, estructuras de control: condiciones y ciclos. Gráficos. -->
-<!-- 1. Funciones. Estructura de archivos. -->
-<!-- 1. Funciones más complejas, visualización, lectura y escritura de datos. -->
-<!-- 1. Resolución de problemas. -->
-<!-- ## Extras {-} -->
-<!-- 1. Versionado de código.  -->
-<!-- 1. RMarkdown -->
-<!-- 1. Leer datos de archivos csv, transformaciones sobre datos, gráficos, guardado de resultados. Ejercicio cara-ceca. -->
-<!-- 1. Informes en RMarkdown, texto estructurado, dataframes. Descripcion Árboles -->
-<!-- 1. Simulaciones. Figuritas -->
+<p><strong>Sobre variabilidad y convergencia - Pensar para discutir durante la próxima clase</strong></p></li>
+<li><p>Repetir el ítem a del punto anterior para los siguientes valores de <code>n_rep</code>: 200, 500, 1000, 5000, 10000. Gráficar <code>n_rep</code> (en el eje x) vs. los promedios calculados para cada valor.</p></li>
+<li><p>Repetir el ítem anterior utilizando otro color para graficar los puntos. Vuelva a repetir. Comentar los resultados obtenidos.</p>
+<em>Extender el álbum</em> considerando que tiene <code>figusTotal=640</code> figuritas, manteniendo que las figuritas se compran individualmente.
+`</li>
+<li><p>Calcular <code>n_rep=100</code> veces la función <code>cuantas_figus</code> para la nueva cantidad de <code>figus_total</code> y guardar los resultados obtenidos en cada repetición. Con los resultados obtenidos estimar cuántas figuritas hay que comprar, en promedio, para completar el álbum original (640 figuritas).</p></li>
+</ol>
+</div>
+<div id="segundo-modelo-las-figuritas-se-compran-por-paquetes" class="section level3">
+<h3><span class="header-section-number">4.2.3</span> Segundo modelo: Las figuritas se compran por paquetes</h3>
+<ol style="list-style-type: decimal">
+<li><p>Simular la generación de un paquete con 5 figuritas, sabiendo que el álbum es de 640. <em>Nota:</em> al igual que en la realidad, puede haber figuritas repetidas en un paquete.</p></li>
+<li><p>Implementar la función <code>generar_paquete(figus_total, figus_paquete)</code> que dado el tamaño del álbum (<code>figus_total</code>) y la cantidad de figuritas por paquete (<code>figus_paquete</code>) genere un paquete de figuritas l azar. <em>Nota:</em> al igual que en la realidad, puede haber figuritas repetidas en un paquete.</p></li>
+<li><p>Implementar la función <code>cuantos_paquetes(figus_total, figus_paquete)</code> que dado el tamaño del álbum (<code>figus_total</code>) y la cantidad de figuritas por paquete (<code>figus_paquete</code>) simule el llenado del álbum y retorne cuántos paquetes se debieron adquirir para completarlo.</p></li>
+<li><p>Ejecutar <code>n_rep=100</code> veces la función <code>cuantos_paquetes</code>, utilizando <code>figus_total=640</code>, <code>figus_paquete=5</code> y guardando los resultados obtenidos en un vector y calcular el promedio.</p></li>
+<li><p><em>Optativo</em>: Utilizando lo implementado estimar la probabilidad de completar el álbum con <span class="math inline">\(850\)</span> paquetes o menos.</p></li>
+<li><p><em>Optativo</em>: Utilizando lo implementado en estimar cuántos paquetes se deben comprar para tener una chance del 90% de completar el álbum. `</p></li>
+</ol>
 
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
+<a href="clase03.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="clase01.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

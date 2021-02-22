@@ -8,3 +8,9 @@ parte-a-funciones
 parte-b-dataframes
 análisis-exploratorio-a-partir-del-manejo-de-salidas-gráficas
 gráficos-básicos-probando-modificar-parámetros
+clase04
+algunas-herramientas-útiles-de-r
+el-álbum-de-figuritas
+datos
+primer-modelo-las-figuritas-se-compran-de-a-una
+segundo-modelo-las-figuritas-se-compran-por-paquetes
