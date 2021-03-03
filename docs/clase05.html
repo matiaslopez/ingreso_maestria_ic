@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Clase 4 Modelado: Álbum de figuritas | Curso de Ingreso - Módulo Programación</title>
-  <meta name="description" content="Clase 4 Modelado: Álbum de figuritas | Curso de Ingreso - Módulo Programación" />
+  <title>Clase 5 Modelado: La ruina del jugador | Curso de Ingreso - Módulo Programación</title>
+  <meta name="description" content="Clase 5 Modelado: La ruina del jugador | Curso de Ingreso - Módulo Programación" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Clase 4 Modelado: Álbum de figuritas | Curso de Ingreso - Módulo Programación" />
+  <meta property="og:title" content="Clase 5 Modelado: La ruina del jugador | Curso de Ingreso - Módulo Programación" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Clase 4 Modelado: Álbum de figuritas | Curso de Ingreso - Módulo Programación" />
+  <meta name="twitter:title" content="Clase 5 Modelado: La ruina del jugador | Curso de Ingreso - Módulo Programación" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="clase03.html"/>
-<link rel="next" href="clase05.html"/>
+<link rel="prev" href="clase04.html"/>
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -175,78 +175,68 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="clase04" class="section level1">
-<h1><span class="header-section-number">Clase 4</span> Modelado: Álbum de figuritas</h1>
-<p>Esta es la guía de ejercicios correspondiente a la clase 04.
-Deberá entregar todos los ejercicios en un archivo .R. Cada ejercicio debe estar resuelto entre comentarios que indique secciones dentro del archivo.</p>
-<p>Además de escribir los programas pedidos deberán probarlos y dejar constancia de las pruebas realizadas, además de explicitar si anduvo como era esperado o no.</p>
-<div id="algunas-herramientas-útiles-de-r" class="section level2">
-<h2><span class="header-section-number">4.1</span> Algunas herramientas útiles de R</h2>
-<p>Para la presente actividad tenga presente los siguientes comandos:</p>
+<div id="clase05" class="section level1">
+<h1><span class="header-section-number">Clase 5</span> Modelado: La ruina del jugador</h1>
+<p>Esta es la guía de ejercicios correspondiente a la clase 05.
+Deberá entregar un archivo .R con las funciones implementadas y un informe sobre la exploración del problema en formato .Rmd y .pdf.</p>
+<p>En esta oportunidad presentamos la última actividad del curso. Es un nuevo problema para seguir programando y aprovechamos la oportunidad para invitar a explorar <em>algunas bondades</em> de R, a la hora de escribir un informe. Por un lado, queremos que resuelvas la guía armando, en un archivo .R, todas las funciones que vas a utilizar a la hora de escribir un informe sobre el problema, pensando en un estudiante de la escuela media. Incluímos algunas pautas para ayudar en la elaboración del informe:</p>
 <ul>
-<li><code>sample(x, size, replace=FALSE)</code></li>
-<li><p><code>sample(x, size, replace=TRUE)</code></p></li>
-<li><code>seq(from =, to =  by = )</code></li>
-<li><code>rep (x =, times = )</code></li>
-<li><code>sum(x)</code></li>
-<li><p><code>mean(x)</code></p></li>
+<li>Contar el problema.</li>
+<li>Mostrar resultados correspondientes a diferentes experimentaciones incluyendo gráficos y especificando que se representa en cada caso.</li>
+<li>Explorar en detalle el caso <span class="math inline">\(p=0.5\)</span></li>
+<li>Conjeturar una fórmula en función de las pruebas realizadas.</li>
+<li>Incluir referencias.</li>
 </ul>
-<p>Explorarlos y revisar su documentación antes de empezar.</p>
-</div>
-<div id="el-álbum-de-figuritas" class="section level2">
-<h2><span class="header-section-number">4.2</span> El álbum de figuritas</h2>
-<p>El llenado de un álbum de figuritas es un fenómeno mundial de larga data que ha dejado recuerdos en mucha gente:</p>
-<blockquote>
-<p><em>(…) A todos los que ahorraron el dinero de su bolsillo
-para completar el álbum Panini de México 86 con su figurita (…)</em></p>
-<p>Emmanuel Macron (Presidente de Francia) ante la muerte de Diego Armando Maradona. <a href="https://www.elysee.fr/emmanuel-macron/2020/11/25/deces-de-diego-maradona">Ver nota</a></p>
-</blockquote>
-<p>También ha sido abordado desde las matemáticas:</p>
-<blockquote>
-<p><em>Las figuritas del mundial: ¿cuántas figuritas hay
-que comprar para completar el álbum del Mundial?</em></p>
-<p>Adrián Paenza; Página 12 - Contratapa 06/07/2014 <a href="https://www.pagina12.com.ar/diario/contratapa/13-250187-2014-07-06.html">Ver nota</a></p>
-</blockquote>
-<div id="datos" class="section level3">
-<h3><span class="header-section-number">4.2.1</span> Datos</h3>
-<p>Para este problema utilizaremos los siguientes datos:</p>
+<div id="comandos-útiles" class="section level2">
+<h2><span class="header-section-number">5.1</span> Comandos útiles</h2>
 <ul>
-<li>Álbum con 640 figuritas.</li>
-<li>Cada figurita se imprime en cantidades iguales y se distribuye aleatoriamente.</li>
-<li>Cada paquete trae cinco figuritas.</li>
+<li><code>sample(x, size, replace = FALSE, prob = NULL)</code></li>
+<li><code>runif(1)</code></li>
+<li><code>rep(x, ...)</code></li>
 </ul>
-<p>Los usaremos considerando distintos escenarios simplificados hasta alcanzar el modelo completo.</p>
 </div>
-<div id="primer-modelo-las-figuritas-se-compran-de-a-una" class="section level3">
-<h3><span class="header-section-number">4.2.2</span> Primer modelo: Las figuritas se compran de a una</h3>
-<ol style="list-style-type: decimal">
-<li><p>Simular el número de una figurita elegida al azar si el álbum es de 6 figuritas. ¿Qué comando sirve?</p></li>
-<li><p>Simular el llenado de un álbum de 6 figuritas e indicar cuántas figuritas se debieron comprar para completarlo.</p></li>
-<li><p>Implementar la función <code>cuantas_figus(figus_total)</code> que, dado el tamaño del álbum (<code>figus_total</code>), simule su llenado y devuelva la cantidad de figuritas que se debieron adquirir para completarlo.</p></li>
-<li><p>Calcular <code>n_rep=1000</code> veces la función anterior utilizando <code>figus_total=6</code> y guardar los resultados obtenidos en cada repetición en un vector. Con los resultados obtenidos para un álbum de seis figuritas, estimar:</p>
-<ol style="list-style-type: lower-alpha">
-<li><p>El número de figuritas que hay que comprar, en promedio, para completar el álbum.</p></li>
-<li><p>La probabilidad de completar el álbum comprando 16 figuritas.</p></li>
-<li><p>El número de figuritas que hay que comprar para tener probabilidad del 90% de completar el álbum.</p></li>
-</ol>
-<p><strong>Sobre variabilidad y convergencia - Pensar para discutir durante la próxima clase</strong></p></li>
-<li><p>Repetir el ítem a del punto anterior para los siguientes valores de <code>n_rep</code>: 200, 500, 1000, 5000, 10000. Gráficar <code>n_rep</code> (en el eje x) vs. los promedios calculados para cada valor.</p></li>
-<li><p>Repetir el ítem anterior utilizando otro color para graficar los puntos. Vuelva a repetir. Comentar los resultados obtenidos.</p>
-<em>Extender el álbum</em> considerando que tiene <code>figus_total=640</code> figuritas, manteniendo que las figuritas se compran individualmente.
-`</li>
-<li><p>Calcular <code>n_rep=100</code> veces la función <code>cuantas_figus</code> para la nueva cantidad de <code>figus_total</code> y guardar los resultados obtenidos en cada repetición. Con los resultados obtenidos estimar cuántas figuritas hay que comprar, en promedio, para completar el álbum original (640 figuritas).</p></li>
-</ol>
+<div id="recursos-para-elaborar-el-informe" class="section level2">
+<h2><span class="header-section-number">5.2</span> Recursos para elaborar el informe</h2>
+<p>Algunos recursos que pueden explorar:</p>
+<ul>
+<li><a href="https://www.markdowntutorial.com/">Tutorial interactivo online</a></li>
+<li><a href="https://rmarkdown.rstudio.com/articles_intro.html">Introducción</a></li>
+<li><a href="https://rmarkdown.rstudio.com/authoring_quick_tour.html">QuickTour</a></li>
+<li><a href="https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf">Hoja de trucos</a></li>
+</ul>
 </div>
-<div id="segundo-modelo-las-figuritas-se-compran-por-paquetes" class="section level3">
-<h3><span class="header-section-number">4.2.3</span> Segundo modelo: Las figuritas se compran por paquetes</h3>
+<div id="la-ruina-del-jugador" class="section level2">
+<h2><span class="header-section-number">5.3</span> La ruina del jugador</h2>
+<p>Se trata de un desafío entre un jugador y el casino que consta de un indeterminado número de jugadas.
+En cada jugada, se lanza una moneda y quién pierde la jugada entrega una moneda al otro jugador.
+La partida concluye cuando uno de los dos participantes ha perdido todas sus monedas (De Santos et al. 2008).</p>
+<p>A modo de ejemplo, supongamos que inicialmente Juan dispone de <span class="math inline">\(j=3\)</span> monedas, mientras que el Casino tiene <span class="math inline">\(c=2\)</span> monedas.
+Es decir, hay un total de <span class="math inline">\(m=j+c\)</span> monedas en juego.
+Cada jugada consiste en lanzar un dado; si sale un cuatro, gana Juan; caso contrario, gana el Casino.
+Es decir, en cada jugada, con probabilidad <span class="math inline">\(p=1/6\)</span> Juan gana una moneda del Casino, mientras que con probabilidad <span class="math inline">\(q=1-p=5/6\)</span> el Casino gana una moneda de Juan.
+La partida continúa hasta que uno de los actores se queda sin monedas (esa es su ruina), mientras que su contrincante es quien gana la partida.</p>
+<p>Proponemos este problema para explorar diferentes aspectos de la programación, como se sugiere a lo largo de la siguiente lista (tenga presente la diferencia entre <strong>partida</strong> y <strong>jugada</strong>):</p>
 <ol style="list-style-type: decimal">
-<li><p>Simular la generación de un paquete con 5 figuritas, sabiendo que el álbum es de 640. <em>Nota:</em> al igual que en la realidad, puede haber figuritas repetidas en un paquete.</p></li>
-<li><p>Implementar la función <code>generar_paquete(figus_total, figus_paquete)</code> que dado el tamaño del álbum (<code>figus_total</code>) y la cantidad de figuritas por paquete (<code>figus_paquete</code>) genere un paquete de figuritas l azar. <em>Nota:</em> al igual que en la realidad, puede haber figuritas repetidas en un paquete.</p></li>
-<li><p>Implementar la función <code>cuantos_paquetes(figus_total, figus_paquete)</code> que dado el tamaño del álbum (<code>figus_total</code>) y la cantidad de figuritas por paquete (<code>figus_paquete</code>) simule el llenado del álbum y retorne cuántos paquetes se debieron adquirir para completarlo.</p></li>
-<li><p>Ejecutar <code>n_rep=100</code> veces la función <code>cuantos_paquetes</code>, utilizando <code>figus_total=640</code>, <code>figus_paquete=5</code> y guardando los resultados obtenidos en un vector y calcular el promedio.</p></li>
-<li><p><em>Optativo</em>: Utilizando lo implementado estimar la probabilidad de completar el álbum con <span class="math inline">\(850\)</span> paquetes o menos.</p></li>
-<li><p><em>Optativo</em>: Utilizando lo implementado en estimar cuántos paquetes se deben comprar para tener una chance del 90% de completar el álbum. `</p></li>
+<li><p>Implemente una función <code>una_jugada</code> que dado <span class="math inline">\(p\)</span> simule una jugada y devuelva <code>TRUE</code> si ganó Juan o <code>FALSE</code> en caso contrario.</p></li>
+<li><p>Simule una jugada con <span class="math inline">\(p=1/6\)</span>. Repita <code>n_rep=1000</code> veces. ¿Qué proporción de veces gana Juan la jugada?</p></li>
+<li><p>Calcule <code>n_rep=1000</code> veces la función <code>una_jugada</code> para los siguientes valores de <span class="math inline">\(p\)</span>: <code>0.2, 0.5, 0.8</code>.
+¿Qué proporción de veces gana Juan en cada caso?</p></li>
+<li><p>Implemente una función <code>juan_se_arruina</code> que dados <span class="math inline">\(j\)</span> (cantidad de monedas de Juan), <span class="math inline">\(m\)</span> (cantidad total de monedas) y <span class="math inline">\(p\)</span> (probabilidad de que Juan gane una jugada) simule una partida completa y devuelva <code>FALSE</code> si Juan gana y <code>TRUE</code>, caso contrario.</p></li>
+<li><p>Simule <span class="math inline">\(n\_rep=1000\)</span> partidas para <span class="math inline">\(j=3\)</span>, <span class="math inline">\(m=5\)</span> y <span class="math inline">\(p=1/6\)</span>. Calcule la proporción de veces en las que Juan gana.</p></li>
+<li><p>Implemente una función <code>estimacion_juan_gana</code> que dados <span class="math inline">\(j\)</span>, <span class="math inline">\(m\)</span>, <span class="math inline">\(p\)</span> y <code>n_rep</code>, simule <code>n_rep</code> partidas con los parámetros que se le pasen y devuelva la proporción de veces en que gana Juan.</p></li>
+<li><p>Fije <span class="math inline">\(m=5\)</span> y <span class="math inline">\(p=1/6\)</span>. Para <span class="math inline">\(j\in \{0,1,\ldots, m\}\)</span>,
+simule <code>n_rep=1000</code> partidas y, en cada caso, calcule la proporción de veces en que gana Juan.</p></li>
+<li><p>Grafique la proporción de veces en que Juan gana (eje <span class="math inline">\(y\)</span>) cuando <span class="math inline">\(p=1/6\)</span> y <span class="math inline">\(m=5\)</span> en función de <span class="math inline">\(j\)</span> (eje <span class="math inline">\(x\)</span>), para <span class="math inline">\(0\leq j\leq m=5\)</span>.
+Repita para <span class="math inline">\(p=0.5\)</span> y <span class="math inline">\(p=0.8\)</span>.</p></li>
+<li><p>Fije <span class="math inline">\(p=0.5\)</span>. Grafique la probabilidad estimada de que Juan gane en función de <span class="math inline">\(j\)</span> cuando <span class="math inline">\(m=10\)</span>, para todos los posibles valores
+<span class="math inline">\(0\leq j\leq m\)</span>. Repita para <span class="math inline">\(m=20\)</span>, <span class="math inline">\(m=30\)</span>, <span class="math inline">\(m=50\)</span>. ¿Qué forma observa en cada uno de los gráficos?</p></li>
+<li><p>Conjeturar una fórmula para la probabilidad de que Juan gane cuando <span class="math inline">\(p=0.5\)</span>, en función de <span class="math inline">\(j\)</span> y de <span class="math inline">\(m\)</span>, la cantidad inicial y total de monedas.</p></li>
+<li><p>Quiero más: para los valores de <span class="math inline">\(p=\)</span> <code>1/6, 1/2, 4/5} y los valores de $m=$</code>10, 20, 30, 50}, combine estos valores y grafique la probabilidad estimada de que Juan gane en función de <span class="math inline">\(j\)</span> (para todos los j que cumplan con <span class="math inline">\(0\leq j\leq m\)</span>).</p></li>
 </ol>
+<div id="referencias" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> Referencias</h3>
+<p>Santos, J. B., Ruiz, J. A. C., <span class="math inline">\(\&amp;\)</span> Hidalgo, M. D. P. (2008). El problema de la ruina del jugador. Suma: Revista sobre Enseñanza y Aprendizaje de las Matemáticas, (59), 23-30.
+`</p>
 
 </div>
 </div>
@@ -256,8 +246,8 @@ que comprar para completar el álbum del Mundial?</em></p>
           </div>
         </div>
       </div>
-<a href="clase03.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="clase05.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="clase04.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
